@@ -15,6 +15,15 @@
       "endDate": "present",
       "summary": "Summary",
       "highlights": ["database construction"]
+    },
+    {
+      "name": "Oregon Health and Science University",
+      "position": "Graduate research fellow",
+      "url": "https://hearingbrain.org/",
+      "startDate": "2017-09-01",
+      "endDate": "2021-09-14",
+      "summary": "Summary",
+      "highlights": ["pupil tracking"]
     }
   ],
   "volunteer": [
