@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Hello! I am new to this domain and currently in the process of building my online portfolio.
+Hello! Stay tuned for updates...
