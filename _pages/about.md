@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Postdoctoral research fellow @[RoLi Lab](https://www.rolilab.com/)
+subtitle: Postdoctoral research fellow @<a href="https://www.rolilab.com/">RoLi Lab</a>
 
 profile:
   align: right
