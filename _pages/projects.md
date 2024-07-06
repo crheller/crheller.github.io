@@ -2,7 +2,7 @@
 layout: page
 title: projects
 permalink: /projects/
-description: Coming soon!
+description: Thanks for visiting! More projects coming soon!
 nav: true
 nav_order: 3
 display_categories: [Postdoc, PhD, fun]
