@@ -6,6 +6,27 @@
     "phone": "(952) 607-7152",
     "url": "https://crheller.github.io/"
   },
+  "education": [
+    {
+      "institution": "Oregon Health and Science University",
+      "location": "Portland, Oregon",
+      "url": "https://www.ohsu.edu/school-of-medicine/neuroscience-graduate-program",
+      "area": "Neuroscience",
+      "studyType": "PhD",
+      "startDate": "2016-09-01",
+      "endDate": "2021-09-14",
+      "courses": ["Dissertation: State-dependent representation of sound by neural population activity in auditory cortex"]
+    },
+    {
+      "institution": "St. Olaf College",
+      "location": "Northfield, Minnesota",
+      "url": "https://wp.stolaf.edu/",
+      "area": "Physics, Neuroscience",
+      "studyType": "BA",
+      "startDate": "2012-09-01",
+      "endDate": "2016-05-01"
+    }
+  ],
   "work": [
     {
       "name": "Max Planck Institute for Biological Cybernetics",
@@ -22,6 +43,46 @@
       "startDate": "2017-09-01",
       "endDate": "2021-09-14",
       "highlights": ["Designed novel, open-source tools for neural data analysis", "Leveraged transfer learning to perform robust pupil tracking", "Present and publish novel research findings"]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Programming languages",
+      "level": "Master",
+      "icon": "fa-solid fa-hashtag",
+      "keywords": [
+        "Python",
+        "Julia",
+        "Bash",
+        "MySQL",
+        "MongoDB"
+      ]
+    },
+    {
+      "name": "Frameworks and Libraries",
+      "level": "Master",
+      "icon": "fa-solid fa-hashtag",
+      "keywords": [
+        "matplotlib",
+        "seaborn",
+        "pandas",
+        "numpy",
+        "scipy",
+        "scikit-learn",
+        "PyTorch"
+      ]
+    },
+    {
+      "name": "Other technical skills",
+      "level": "Master",
+      "icon": "fa-solid fa-hashtag",
+      "keywords": [
+        "HPC",
+        "Git",
+        "Docker",
+        "Linux",
+        "LaTeX"
+      ]
     }
   ],
   "volunteer": [
@@ -42,27 +103,6 @@
       "startDate": "2016-09-01",
       "endDate": "2019-06-01",
       "summary": "Minds Matter is a nationwide program that provides additional tutoring and mentoring on Saturdays for highly motivated, economically disadvantaged high school students that aspire to attend a 4-year university. As a mentor, I worked with two high school students every Saturday, starting from their sophomore year of high school, to help them navigate the college application process. Both students successfully entered 4-year degree programs in the fall of 2020."
-    }
-  ],
-  "education": [
-    {
-      "institution": "Oregon Health and Science University",
-      "location": "Portland, Oregon",
-      "url": "https://www.ohsu.edu/school-of-medicine/neuroscience-graduate-program",
-      "area": "Neuroscience",
-      "studyType": "PhD",
-      "startDate": "2016-09-01",
-      "endDate": "2021-09-14",
-      "courses": ["Dissertation: State-dependent representation of sound by neural population activity in auditory cortex"]
-    },
-    {
-      "institution": "St. Olaf College",
-      "location": "Northfield, Minnesota",
-      "url": "https://wp.stolaf.edu/",
-      "area": "Physics, Neuroscience",
-      "studyType": "BA",
-      "startDate": "2012-09-01",
-      "endDate": "2016-05-01"
     }
   ],
   "awards": [
@@ -121,7 +161,7 @@
       "icon": "fa-solid fa-location-dot"
     }
   ],
-  "selected publications": [
+  "publications": [
     {
       "name": "Task-specific invariant representation in auditory cortex",
       "publisher": "eLife",
@@ -139,46 +179,36 @@
       "publisher": "PloS one",
       "releaseDate": "2022-07-21",
       "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0271136"
-    }
-  ],
-  "skills": [
-    {
-      "name": "Programming languages",
-      "level": "Master",
-      "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "Python",
-        "Julia",
-        "Bash",
-        "MySQL",
-        "MongoDB"
-      ]
     },
     {
-      "name": "Frameworks and Libraries",
-      "level": "Master",
-      "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "matplotlib",
-        "seaborn",
-        "pandas",
-        "numpy",
-        "scipy",
-        "scikit-learn",
-        "PyTorch"
-      ]
+      "name": "State-dependent representation of sound by neural population activity in auditory cortex",
+      "publisher": "Oregon Health and Science University",
+      "releaseDate": "2021-07-09",
+      "url": "https://digitalcollections.ohsu.edu/record/9297?v=pdf"
     },
     {
-      "name": "Other technical skills",
-      "level": "Master",
-      "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "HPC",
-        "Git",
-        "Docker",
-        "Linux",
-        "LaTeX"
-      ]
+      "name": "Dissociation of task engagement and arousal effects in auditory cortex and midbrain",
+      "publisher": "eLife",
+      "releaseDate": "2021-02-11",
+      "url": "https://elifesciences.org/articles/60153"
+    },
+    {
+      "name": "Selective effects of arousal on population coding of natural sounds in auditory cortex",
+      "publisher": "bioRxiv",
+      "releaseDate": "2020-09-01",
+      "url": "https://www.biorxiv.org/content/10.1101/2020.08.31.276584v3"
+    },
+    {
+      "name": "A Hodgkin-Huxley model for conduction velocity in the medial giant fiber of the earthworm, Lumbricus terrestris",
+      "publisher": "Impulse",
+      "releaseDate": "2016-10-01",
+      "url": "https://impulse.pubpub.org/pub/n1k9b0oj/release/1"
+    },
+    {
+      "name": "Genetically identified suppressed-by-contrast retinal ganglion cells reliably signal self-generated visual stimuli",
+      "publisher": "Journal of Neuroscience",
+      "releaseDate": "2015-07-29",
+      "url": "https://www.jneurosci.org/content/35/30/10815"
     }
   ],
   "languages": [
