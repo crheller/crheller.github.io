@@ -13,8 +13,7 @@
       "url": "https://www.kyb.tuebingen.mpg.de/en",
       "startDate": "2021-09-15",
       "endDate": "present",
-      "summary": "Summary",
-      "highlights": ["database construction"]
+      "highlights": ["Develop novel methods to model information flow through neural circuits", "Utilize HPC to improve standard compute pipelines", "Constuct and maintain lab database", "Present and publish novel research findings"]
     },
     {
       "name": "Oregon Health and Science University",
@@ -22,8 +21,7 @@
       "url": "https://hearingbrain.org/",
       "startDate": "2017-09-01",
       "endDate": "2021-09-14",
-      "summary": "Summary",
-      "highlights": ["pupil tracking"]
+      "highlights": ["Designed novel, open-source tools for neural data analysis", "Leveraged transfer learning to perform robust pupil tracking", "Present and publish novel research findings"]
     }
   ],
   "volunteer": [
@@ -34,7 +32,7 @@
       "url": "https://www.projects.tuebingen.mpg.de/",
       "startDate": "2024-07-01",
       "endDate": "2024-09-30",
-      "summary": "Summary."
+      "summary": "The CaCTüS program provides research opportunities to Bachelor and Master students wordwide who are held back by personal, financial, regional or societal constraints. As a project supervisor, I am responsible for designing a 3-month summer research project to be carried out by a CaCTüS intern, under my supervision."
     },
     {
       "organization": "Minds Matter Portland",
@@ -43,7 +41,7 @@
       "url": "https://www.mindsmatterportland.org/",
       "startDate": "2016-09-01",
       "endDate": "2019-06-01",
-      "summary": "Summary."
+      "summary": "Minds Matter is a nationwide program that provides additional tutoring and mentoring on Saturdays for highly motivated, economically disadvantaged high school students that aspire to attend a 4-year university. As a mentor, I worked with two high school students every Saturday, starting from their sophomore year of high school, to help them navigate the college application process. Both students successfully entered 4-year degree programs in the fall of 2020."
     }
   ],
   "education": [
@@ -96,7 +94,7 @@
     {
       "title": "Student Achievement Award",
       "date": "2018",
-      "awarder": "Neuroscience Graduate Progream - OHSU"
+      "awarder": "Neuroscience Graduate Program - OHSU"
     },
     {
       "title": "Graduate Research Fellowship",
@@ -129,21 +127,18 @@
       "publisher": "eLife",
       "releaseDate": "2023-06-29",
       "url": "https://elifesciences.org/reviewed-preprints/89936",
-      "summary": "Summary."
     },
     {
       "name": "Neural and behavioral organization of rapid eye movement sleep in zebrafish",
       "publisher": "bioRxiv",
       "releaseDate": "2023-08-28",
       "url": "https://www.biorxiv.org/content/10.1101/2023.08.28.555077v1.abstract",
-      "summary": "Summary."
     },
     {
       "name": "Targeted dimensionality reduction enables reliable estimation of neural population coding accuracy from trial-limited data",
       "publisher": "PloS one",
       "releaseDate": "2022-07-21",
       "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0271136",
-      "summary": "Summary."
     }
   ],
   "skills": [
@@ -166,6 +161,7 @@
       "keywords": [
         "matplotlib",
         "seaborn",
+        "pandas",
         "numpy",
         "scipy",
         "scikit-learn",
@@ -187,22 +183,43 @@
   ],
   "languages": [
     {
-      "language": "German",
-      "fluency": "Limited working proficiency",
+      "language": "English",
+      "fluency": "Native speaker",
       "icon": ""
     },
     {
-      "language": "English",
-      "fluency": "Native speaker",
+      "language": "German",
+      "fluency": "Limited working proficiency",
       "icon": ""
     }
   ],
   "interests": [
     {
-      "name": "TODO",
+      "name": "Nature-based climate solutions",
       "icon": "fa-solid fa-tag",
       "keywords": [
-        "todo"
+        "reforestation", "regenerative agriculture", "environmental conservation"
+      ]
+    },
+    {
+      "name": "Electrical grid",
+      "icon": "fa-solid fa-tag",
+      "keywords": [
+        "renewable generation", "smart grids", "resiliency"
+      ]
+    },
+    {
+      "name": "Data science and machine learning",
+      "icon": "fa-solid fa-tag",
+      "keywords": [
+        "dimensionality reduction", "latent variable models", "clustering methods", "data management", "scalability", "reproducibility"
+      ]
+    },
+    {
+      "name": "Neuroscience",
+      "icon": "fa-solid fa-tag",
+      "keywords": [
+        "flexible information processing", "population decoding", "brain-wide communication", "circuits underlying natural behaviors"
       ]
     }
   ]
