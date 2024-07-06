@@ -126,19 +126,19 @@
       "name": "Task-specific invariant representation in auditory cortex",
       "publisher": "eLife",
       "releaseDate": "2023-06-29",
-      "url": "https://elifesciences.org/reviewed-preprints/89936",
+      "url": "https://elifesciences.org/reviewed-preprints/89936"
     },
     {
       "name": "Neural and behavioral organization of rapid eye movement sleep in zebrafish",
       "publisher": "bioRxiv",
       "releaseDate": "2023-08-28",
-      "url": "https://www.biorxiv.org/content/10.1101/2023.08.28.555077v1.abstract",
+      "url": "https://www.biorxiv.org/content/10.1101/2023.08.28.555077v1.abstract"
     },
     {
       "name": "Targeted dimensionality reduction enables reliable estimation of neural population coding accuracy from trial-limited data",
       "publisher": "PloS one",
       "releaseDate": "2022-07-21",
-      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0271136",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0271136"
     }
   ],
   "skills": [
@@ -220,6 +220,13 @@
       "icon": "fa-solid fa-tag",
       "keywords": [
         "flexible information processing", "population decoding", "brain-wide communication", "circuits underlying natural behaviors"
+      ]
+    },
+    {
+      "name": "Hobbies",
+      "icon": "fa-solid fa-tag",
+      "keywords": [
+        "Cycling", "Hockey", "Running"
       ]
     }
   ]
