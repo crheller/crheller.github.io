@@ -158,7 +158,7 @@ def callbackF(Xi):
     Nfeval += 1
 ```
 
-Finally, we perform the optimization. In order to ensure that our fitted basis vectors are orthonormal, we perform the fitting in an iterative fashion, looping over principal components in order of decreasing variance explained. We deflating the target matrix **X** by the rank-1 reconstruction for each principal component, ensuring that on the next iteration we find a basis vector that is orthogonal to all that came before it. The procedure for this is shown below:
+Finally, we perform the optimization. In order to ensure that our fitted basis vectors are orthonormal, we perform the fitting in an iterative fashion, looping over principal components in order of decreasing variance explained. We deflate the target matrix **X** by the rank-1 reconstruction for each principal component, ensuring that on the next iteration we find a basis vector that is orthogonal to those that were fit before it. The procedure for this is shown below:
 ```
 # fit model -- iterate over components, fit, deflate, fit next PC
 n_components = 2
