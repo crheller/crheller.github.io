@@ -57,10 +57,7 @@ cov = np.cov(X) # use numpy covariance function to compute covariance matrix of 
 ```
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/pca/pca_data.png" title="pca data" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/pca/cov_matrix.png" title="covariance matrix" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/pca/data_and_cov_matrix.png" title="pca data" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
