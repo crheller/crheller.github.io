@@ -11,7 +11,7 @@ related_publications: true
 ## Background
 Principal component analysis, typically referred to as PCA, is a popular dimensionality reduction technique utlized across many fields. Applications of PCA include data compression, data visualization, and latent variable discovery. Using open source tools, such as `sklearn`, today anyone can easily apply PCA to their data. However, this ease of access means that PCA is often applied without full consideration of whether or not it is the appropriate method for a given data analysis problem. 
 
-Here, we dig a bit deeper by exploring some of the different possible methods for implementing PCA. Our goal is not to go through the mathematical derivations in full detail, but rather just to give a general intuition for PCA, how and when it can be applied to data, and ways to extend / customize the methods depending on your needs. 
+Here, we dig a bit deeper by exploring some of the different possible methods for implementing PCA from first principles. Our goal is not to go through the mathematical derivations in detail, but rather just to give a general and geometric intuition for PCA, how and when it can be applied to data, and ways to extend / customize the method depending on your data analysis needs. 
 
 #### Tools used:
 ```
@@ -126,13 +126,77 @@ sum of reconstruction differences: -1.8512968935624485e-14
 
 
 ## <a name="reconstruction"></a>PCA as a reconstruction optimization problem
+Instead of using eigendecomposition, it is also possible to formulate PCA as an optimization problem in which the objective is to find the set of basis vectors that minimize the low-rank reconstruction error of the data. From an efficiency standpoint, this does not make a lot of sense given that we have already demonstrated that there exists a closed form solution to PCA that can be solved extremely efficiently. However, demonstrating that PCA can be posed as an optimization problem helps to drive home the point that the fundamental objective of PCA is to find the basis vectors that capture as much variance as possible in the original data. Furthermore, it allows us the flexibility to modify the objective function of the optimization in order to suit our particular analysis needs. But more on that in the following section.
+
+To perform PCA, we seek to minimize the objective function `nmse` - the the normalized mean square error between the reconstructed data and the original data, as shown here.
+```
+# define objective function
+def nmse(pc, X):
+    # reconstruct rank-1 view of X
+    recon = reconstruct(pc, X)
+    # compute error
+    err = np.mean((X - recon)**2) / np.mean(X**2)
+    # return error
+    return err
+
+# define function to do the PC reconstruction
+def reconstruct(pc, X):
+    return (X.T @ pc[:, np.newaxis] @ pc[np.newaxis, :]).T
+```
+
+Next, we define a callback function to monitor the progress of our fitting procedure.
+```
+# define a callback function to monitor fitting progress
+def callbackF(Xi):
+    global Nfeval
+    global loss
+    global parms
+    parms.append(Xi)
+    ll = nmse(Xi, Xfit)
+    loss.append(ll)
+    print(f"Nfeval: {Nfeval}, loss: {ll}")
+    Nfeval += 1
+```
+
+Finally, we perform the optimization. In order to ensure that our fitted basis vectors are orthonormal, we perform the fitting in an iterative fashion, looping over principal components in order of decreasing variance explained. We deflating the target matrix **X** by the rank-1 reconstruction for each principal component, ensuring that on the next iteration we find a basis vector that is orthogonal to all that came before it. The procedure for this is shown below:
+```
+# fit model -- iterate over components, fit, deflate, fit next PC
+n_components = 2
+components_ = np.zeros((n_components, X.shape[0]))
+Xfit = X.copy() # we iteratively deflate X while fitting to ensure fitted PCs are orthogonal
+# save loss / parameters during fit
+loss_optim = []
+params_optim = []
+for component in range(0, n_components):
+    Nfeval = 1
+    loss = []
+    parms = []
+
+    # initialize the PC
+    x0 = np.random.normal(0, 1, X.shape[0])
+    x0 = x0 / np.linalg.norm(x0)
+    
+    # find optimal PC using scpiy's minimize
+    result = minimize(nmse, x0, args=(Xfit,), callback=callbackF, method='Nelder-Mead')
+    
+    # deflate X
+    Xfit = Xfit - reconstruct(result.x, Xfit)
+
+    # save resulting PC
+    components_[component, :] = result.x
+    
+    # save all intermediate PCs and loss during the optimization procedure
+    loss_optim.append(loss)
+    params_optim.append(parms)
+```
+In the animation below, we can see that we converge relatively quickly to the known solution.
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/pca/optim.gif" title="pca optimization" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Can I insert a gif?
+    Animation of PCA fitting procedure for the first principal component. Left: input data shown in gray, estimate of the first principal component shown in black, true first principal component shown in red. Right: Reconstruction error as a function of optimization steps (N feval - Number of function evaluations).
 </div>
 
 ## <a name="sparse"></a>Extensions of PCA - Sparse PCA
