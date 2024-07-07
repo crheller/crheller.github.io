@@ -126,7 +126,14 @@ sum of reconstruction differences: -1.8512968935624485e-14
 
 
 ## <a name="reconstruction"></a>PCA as a reconstruction optimization problem
-
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/pca/optim.gif" title="pca optimization" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Can I insert a gif?
+</div>
 
 ## <a name="sparse"></a>Extensions of PCA - Sparse PCA
 Use a large population here to highlight the advantage of sparse PCA for interpretability. Also - useful as regularization? i.e. performs better on held out data?
