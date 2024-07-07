@@ -53,7 +53,7 @@ To illustrate this approach, we will use randomly generated 2-D synthetic data a
 
 #### Step 1 - Compute the covariance matrix
 ```
-cov = np.cov(X) # X is feature X observation data matrix
+cov = np.cov(X) # use numpy covariance function to compute covariance matrix of data
 ```
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -64,7 +64,7 @@ cov = np.cov(X) # X is feature X observation data matrix
     </div>
 </div>
 <div class="caption">
-    Left: Synethic input data. Right: Covariance matrix of synthetic data. 
+    Left: Synthetic input data. Right: Covariance matrix of synthetic data. 
 </div>
 
 #### Step 2 - Perform eigendecomposition
@@ -109,7 +109,7 @@ Eigendecomposition, variance explained ratio: [0.88977678 0.11022322]
 sklearn, variance explained ratio: [0.88977678 0.11022322]
 ```
 
-Using the first PC to reconstruct our data we get identical results.
+Using the first PC to reconstruct our data, we get identical results.
 ```
 e_reconstructed = X.T @ eigenvectors[:, [0]] @ eigenvectors[:, [0]].T
 sk_reconstructed = X.T @ pca.components_[[0], :].T @ pca.components_[[0], :]
@@ -120,17 +120,11 @@ sum of reconstruction differences: -1.8512968935624485e-14
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/pca/eig_pc_comparison.png" title="loading similarity" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/pca/pca_var_explained.png" title="var explained" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/pca/reconstructions.png" title="reconstructions" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/pca/eig_vs_sklearn_summary.png" title="loading similarity" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Left: Synethic input data. Right: Covariance matrix of synthetic data. 
+    Summary results of eigendecomposition and sklearn approaches to PCA. Both yield identical results.
 </div>
 
 
