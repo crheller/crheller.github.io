@@ -19,6 +19,7 @@ numpy
 scipy
 sklearn
 matplotlib
+seaborn
 ```
 Full code available at: [https://github.com/crheller/PCAdemo.git](https://github.com/crheller/PCAdemo.git)
 
@@ -28,6 +29,7 @@ Full code available at: [https://github.com/crheller/PCAdemo.git](https://github
 3. [PCA as a reconstruction optimization problem](#reconstruction)
 4. [Extensions of PCA - Sparse PCA](#sparse)
 5. [Limitations of PCA for latent variable disovery](#limitations)
+6. [Summary](#summary)
 
 
 ## <a name="basics"></a>The basics
@@ -35,7 +37,7 @@ PCA is a linear dimensionality reduction method. The goal of dimensionalty reduc
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/pca_basic.png" title="PCA basics" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/pca/pca_basic.png" title="PCA basics" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -44,12 +46,104 @@ PCA is a linear dimensionality reduction method. The goal of dimensionalty reduc
 
 
 ## <a name="edecomp"></a>PCA as an eigendecomposition problem
+The most typical way PCA is solved is by performing an eigendecomposition of the raw data covariance matrix. This is the method used by most open source libraries, such as `sklearn.decomposition.PCA`. Here, we step through this approach using "low level" linear algebra operations available in `numpy` to reproduce the output of `sklearn`.
+
+#### Data generation
+To illustrate this approach, we will use randomly generated 2-D synthetic data as above. To simplify our approach slightly, we generate mean-centered data.
+
+#### Step 1 - Compute the covariance matrix
+```
+cov = np.cov(X) # X is feature X observation data matrix
+```
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/pca/pca_data.png" title="pca data" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/pca/cov_matrix.png" title="covariance matrix" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Left: Synethic input data. Right: Covariance matrix of synthetic data. 
+</div>
+
+#### Step 2 - Perform eigendecomposition
+```
+eigenvalues, eigenvectors = np.linalg.norm(cov) 
+
+# sort according to variance explained
+sort_args = np.argsort(eigenvalues)[::-1]
+eigenvectors = eigenvectors[:, sort_args]
+eigenvalues = eigenvalues[sort_args]
+```
+
+#### Step 3 - Compute fraction variance explained by each component
+```
+var_explained = eigenvalues / np.sum(eigenvalues)
+```
+
+#### Step 4 - Verify that we have reproduced `sklearn` results
+```
+# sklearn pca
+from sklearn.decomposition import PCA
+pca = PCA()
+pca.fit(X.T)
+```
+
+The eigenvectors we found are identical to the components returned by `sklearn`.
+```
+# the dot product of our eigenvectors and `sklearn`'s components should return the identity matrix
+dp = abs.(eigenvectors.T @ pca.components_)
+print(dp)
+
+array([[ 1.00000000e+00,  1.97596122e-16],
+       [-2.21149847e-16,  1.00000000e+00]])
+```
+
+We have correctly measured the variance explained by each component.
+```
+print(f"Eigendecomposition, variance explained ratio: {var_explained}")
+print(f"sklearn, variance explained ratio: {pca.explained_variance_ratio_}")
+
+Eigendecomposition, variance explained ratio: [0.88977678 0.11022322]
+sklearn, variance explained ratio: [0.88977678 0.11022322]
+```
+
+Using the first PC to reconstruct our data we get identical results.
+```
+e_reconstructed = X.T @ eigenvectors[:, [0]] @ eigenvectors[:, [0]].T
+sk_reconstructed = X.T @ pca.components_[[0], :].T @ pca.components_[[0], :]
+print(f"sum of reconstruction differences: {np.sum(e_reconstructed - sk_reconstructed)}")
+
+sum of reconstruction differences: -1.8512968935624485e-14
+```
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/pca/eig_pc_comparison.png" title="loading similarity" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/pca/pca_var_explained.png" title="var explained" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/pca/reconstructions.png" title="reconstructions" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Left: Synethic input data. Right: Covariance matrix of synthetic data. 
+</div>
 
 
 ## <a name="reconstruction"></a>PCA as a reconstruction optimization problem
 
 
 ## <a name="sparse"></a>Extensions of PCA - Sparse PCA
+Use a large population here to highlight the advantage of sparse PCA for interpretability. Also - useful as regularization? i.e. performs better on held out data?
 
 
 ## <a name="limitations"></a>Limitations of PCA for latent variable disovery
+Fake height / weight data. Goal is to discover the latent relationship between height / weight. But, imagine we don't know male vs. female. This latent factor could affect the relationship between height / weight that PCA discovers. Thus, if the latent dimensions of variation are not orthogonal, PCA fails to accurately capture the underlying latent relationships.
+
+Non linear latent relationships are not well captured by PCA.
+
+## <a name="summary"></a>Summary
