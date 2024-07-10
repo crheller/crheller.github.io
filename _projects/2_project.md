@@ -156,7 +156,7 @@ def callbackF(Xi):
 {% endhighlight %}
 
 Finally, we perform the optimization. In order to ensure that our fitted basis vectors are orthogonal, as required by PCA, we perform the fitting in an iterative fashion. That is, we loop over principal components in order of decreasing variance explained and on each iteration we deflate the target matrix **X** by the rank-1 reconstruction for each principal component. This ensures that on the next iteration we find a basis vector that is orthogonal to all those that were fit before it. The procedure for this is shown below:
-{% highlight python %}
+```python
 # fit model -- iterate over components, fit, deflate, fit next PC
 n_components = 2
 components_ = np.zeros((n_components, X.shape[0]))
@@ -185,7 +185,7 @@ for component in range(0, n_components):
     # save all intermediate PCs and loss during the optimization procedure
     loss_optim.append(loss)
     params_optim.append(parms)
-{% endhighlight %}
+```
 
 In the animation below, we visualize the fitting process. We can see that we converge relatively quickly to the true solution for the first principal component.
 <div class="row">
@@ -202,7 +202,9 @@ One useful advantage of advantage of thinking of PCA as an optimization problem 
 
 In standard PCA, we seek to minimize the objective function described in code the previous section. This objective function can be written mathematically as:
 
-$$\left(||\textbf{X} - \textbf{X}WW^T||_{F}^{2})$$
+\begin{equation}
+\left(||\textbf{X} - \textbf{X}WW^T||_{F}^{2})
+\end{equation}
 
 Where $$ \textbf{X} $$ represents our original data, $$ W $$ represents a principal component (i.e., a basis or "loading" vector), and $$ ||\cdot||_F^2 $$ represents the squared Frobenius norm. Thus, the goal is to find $$ W $$ such that we minimize the difference between $$ \textbf{X} $$ and its rank-1 reconstruction: $$ \textbf{X}WW^T $$.
 
