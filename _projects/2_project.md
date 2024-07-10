@@ -202,10 +202,10 @@ One useful advantage of advantage of thinking of PCA as an optimization problem 
 
 In standard PCA, we seek to minimize the objective function described in code the previous section. This objective function can be written mathematically as:
 
-<!-- \begin{equation}
+\begin{equation}
 ||\textbf{X} - \textbf{X}WW^T||_{F}^{2}
-\end{equation} -->
-<!--  -->
+\end{equation}
+
 Where $$ \textbf{X} $$ represents our original data, $$ W $$ represents a principal component (i.e., a basis or "loading" vector), and $$ ||\cdot||_F^2 $$ represents the squared Frobenius norm. Thus, the goal is to find $$ W $$ such that we minimize the difference between $$ \textbf{X} $$ and its rank-1 reconstruction: $$ \textbf{X}WW^T $$.
 
 In order to arrive at a form of Sparse PCA, all we need to do is tack on a sparsity penalty to our objective function. One way to do this is using the [L1 norm](https://mathworld.wolfram.com/L1-Norm.html). Our new objective function then becomes: -->
