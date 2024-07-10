@@ -11,7 +11,7 @@ related_publications: true
 ## Background
 Principal component analysis, typically referred to as PCA, is a popular dimensionality reduction technique utlized across many fields. Applications of PCA include data compression, data visualization, and latent variable discovery. Using open source tools, such as `sklearn`, today anyone can easily apply PCA to their data. However, this ease of access means that PCA is often applied without full consideration of whether or not it is the appropriate method for a given data analysis problem. 
 
-Here, we dig a bit deeper by exploring some of the different possible methods for implementing PCA from first principles. Our goal is not to go through the mathematical derivations in detail, but rather just to give a general and geometric intuition for PCA, how and when it can be applied to data, and ways to extend / customize the method depending on your data analysis needs. 
+Here, we dig a bit deeper by exploring some of the different possible methods for implementing PCA from first principles. Our goal is not to go through the mathematical derivations in detail, but rather to give a general and geometric intuition for PCA, how and when it can be applied to data, and ways to extend / customize the method depending on your data analysis needs. 
 
 #### Tools used:
 ```
@@ -33,7 +33,7 @@ Full code available at: [https://github.com/crheller/PCAdemo.git](https://github
 
 
 ## <a name="basics"></a>The basics
-PCA is a linear dimensionality reduction method. The goal of dimensionalty reduction, in general, is to find a represenation of the original data which maintains the data's overall structure while reducing the number of dimensions needed to describe it. In the case of PCA, this is done by finding the ordered set of orthonormal **basis** vectors which capture the principal axes of variation in the original data. To reduce the dimensionality, we then discard the basis vectors which capture the least amount of variance and **transform** the orignal data by projecting it onto the remaining basis vectors. We can then **reconstruct** a "denoised", low-rank version of the original data. This basic idea is illustrated in the cartoon below.
+PCA is a linear dimensionality reduction method. The goal of dimensionalty reduction, in general, is to find a represenation of the original data which maintains the data's overall structure while reducing the number of dimensions needed to describe it. In the case of PCA, this is done by finding the ordered set of orthonormal **basis** vectors which capture the principal axes of variation in the original data. To reduce the dimensionality, the basis vectors which capture the least amount of variance are discarded. The data is then **transformed** by projecting it onto the remaining basis vectors. Using this low dimensional representation of the data, it is then possible to **reconstruct** a "denoised", low-rank version of the original data. This basic idea is illustrated in the cartoon below.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -128,23 +128,20 @@ sum of reconstruction differences: -1.8512968935624485e-14
 ## <a name="reconstruction"></a>PCA as a reconstruction optimization problem
 Instead of using eigendecomposition, it is also possible to formulate PCA as an optimization problem in which the objective is to find the set of basis vectors that minimize the low-rank reconstruction error of the data. From an efficiency standpoint, this does not make a lot of sense given that we have already demonstrated that there exists a closed form solution to PCA that can be solved extremely efficiently. However, demonstrating that PCA can be posed as an optimization problem helps to drive home the point that the fundamental objective of PCA is to find the basis vectors that capture as much variance as possible in the original data. Furthermore, it allows us the flexibility to modify the objective function of the optimization in order to suit our particular analysis needs. But more on that in the following section.
 
-To perform PCA, we seek to minimize the objective function `nmse` - the the normalized mean square error between the reconstructed data and the original data, as shown here.
+To perform PCA, we seek to minimize the objective function `frob` - the squared [Frobenius norm](https://mathworld.wolfram.com/FrobeniusNorm.html) of the difference between the reconstructed data and the original data:
 ```
 # define objective function
-def nmse(pc, X):
+def frob(pc, X):
     # reconstruct rank-1 view of X
     recon = reconstruct(pc, X)
-    # compute error
-    err = np.mean((X - recon)**2) / np.mean(X**2)
-    # return error
+    # compute error (sq. frob. norm of err in reconstruction)
+    err = np.linalg.norm(X-recon, ord="fro") ** 2 # sq. forbenius norm
+    # normalize by sq. frob norm of data, X
+    err = err / (np.linalg.norm(X)**2)
     return err
-
-# define function to do the PC reconstruction
-def reconstruct(pc, X):
-    return (X.T @ pc[:, np.newaxis] @ pc[np.newaxis, :]).T
 ```
 
-Next, we define a callback function to monitor the progress of our fitting procedure.
+Next, we also define a callback function to monitor the progress of our fitting procedure.
 ```
 # define a callback function to monitor fitting progress
 def callbackF(Xi):
@@ -152,13 +149,13 @@ def callbackF(Xi):
     global loss
     global parms
     parms.append(Xi)
-    ll = nmse(Xi, Xfit)
+    ll = frob(Xi, Xfit)
     loss.append(ll)
     print(f"Nfeval: {Nfeval}, loss: {ll}")
     Nfeval += 1
 ```
 
-Finally, we perform the optimization. In order to ensure that our fitted basis vectors are orthonormal, we perform the fitting in an iterative fashion, looping over principal components in order of decreasing variance explained. We deflate the target matrix **X** by the rank-1 reconstruction for each principal component, ensuring that on the next iteration we find a basis vector that is orthogonal to those that were fit before it. The procedure for this is shown below:
+Finally, we perform the optimization. In order to ensure that our fitted basis vectors are orthogonal, as required by PCA, we perform the fitting in an iterative fashion. That is, we loop over principal components in order of decreasing variance explained and on each iteration we deflate the target matrix **X** by the rank-1 reconstruction for each principal component. This ensures that on the next iteration we find a basis vector that is orthogonal to all those that were fit before it. The procedure for this is shown below:
 ```
 # fit model -- iterate over components, fit, deflate, fit next PC
 n_components = 2
@@ -189,7 +186,7 @@ for component in range(0, n_components):
     loss_optim.append(loss)
     params_optim.append(parms)
 ```
-In the animation below, we can see that we converge relatively quickly to the known solution.
+In the animation below, we visualize the fitting process. We can see that we converge relatively quickly to the true solution for the first principal component.
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/pca/optim.gif" title="pca optimization" class="img-fluid rounded z-depth-1" %}
@@ -200,7 +197,18 @@ In the animation below, we can see that we converge relatively quickly to the kn
 </div>
 
 ## <a name="sparse"></a>Extensions of PCA - Sparse PCA
-Use a large population here to highlight the advantage of sparse PCA for interpretability. Also - useful as regularization? i.e. performs better on held out data?
+One useful advantage of advantage of thinking of PCA as an optimization problem is that it draws a close parallel to linear regression, which has been extended in a variety of ways to suit different analysis problems - such as introducing sparsity to the fitted regression coefficients (analogous to our principal components). Identifying sparse principal components (many weights are 0) can be useful for interpretability. For example, if you have a very high dimensional dataset you might want to identify only a small subset of the input variables which contribute to variance, rather than a combination of all the variables which can be difficult to interpret. In order to understand how we can implement this, it is helpful to briefly highlight a bit of the underlying math.
+
+In standard PCA, we seek to minimize the objective function described in code the previous section. This objective function can be written mathematically as:
+$$||\textbf{X} - \textbf{X}WW^T||_F^2$$
+Where $\textbf{X}$ represents our original data, $W$ represents a principal component (i.e., a basis or "loading" vector), and $||.||_F^2$ represents the squared Frobenius norm. Thus, the goal is to find $W$ such that we minimize the difference between $\textbf{X}$ and the its rank-1 reconstruction $\textbf{X}$: $\textbf{X}WW^T$.
+
+In order to arrive at a form of Sparse PCA, all we need to do is tack on a sparsity penalty to our objective function. One way to do this is using the [L1 norm](https://mathworld.wolfram.com/L1-Norm.html):
+$$||\textbf{X} - \textbf{X}WW^T||_F^2 + \lambda\sum_{i=1}^{n}||\textbf{w}_i||_1$$
+Where the second term, $$\sum_{i=1}^{n}||\textbf{w}_i||_1$$ is the L1 norm and $\lambda$ is a tunable hyperparameter controlling the level of sparsity desired. This new objective function is now very similar to [LASSO](https://en.wikipedia.org/wiki/Lasso_(statistics)) regression. 
+
+To see this in action, let's take a look at a quick example (synethic) dataset:
+
 
 
 ## <a name="limitations"></a>Limitations of PCA for latent variable disovery
