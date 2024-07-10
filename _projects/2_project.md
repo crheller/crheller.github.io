@@ -21,7 +21,7 @@ sklearn
 matplotlib
 seaborn
 ```
-Full code available at: [https://github.com/crheller/PCAdemo.git](https://github.com/crheller/PCAdemo.git)
+Full code available at: (I will add link)
 
 ## Outline
 1. [The basics](#basics)
@@ -200,7 +200,9 @@ In the animation below, we visualize the fitting process. We can see that we con
 One useful advantage of advantage of thinking of PCA as an optimization problem is that it draws a close parallel to linear regression, which has been extended in a variety of ways to suit different analysis problems - such as introducing sparsity to the fitted regression coefficients (analogous to our principal components). Identifying sparse principal components (many weights are 0) can be useful for interpretability. For example, if you have a very high dimensional dataset you might want to identify only a small subset of the input variables which contribute to variance, rather than a combination of all the variables which can be difficult to interpret. In order to understand how we can implement this, it is helpful to briefly highlight a bit of the underlying math.
 
 In standard PCA, we seek to minimize the objective function described in code the previous section. This objective function can be written mathematically as:
-\(||\textbf{X} - \textbf{X}WW^T||_F^2\)
+$$
+||\textbf{X} - \textbf{X}WW^T||_F^2\
+$$
 Where $\textbf{X}$ represents our original data, $W$ represents a principal component (i.e., a basis or "loading" vector), and $||.||_F^2$ represents the squared Frobenius norm. Thus, the goal is to find $W$ such that we minimize the difference between $\textbf{X}$ and the its rank-1 reconstruction $\textbf{X}$: $\textbf{X}WW^T$.
 
 In order to arrive at a form of Sparse PCA, all we need to do is tack on a sparsity penalty to our objective function. One way to do this is using the [L1 norm](https://mathworld.wolfram.com/L1-Norm.html):
