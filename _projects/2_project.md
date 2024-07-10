@@ -14,13 +14,13 @@ Principal component analysis, typically referred to as PCA, is a popular dimensi
 Here, we dig a bit deeper by exploring some of the different possible methods for implementing PCA from first principles. Our goal is not to go through the mathematical derivations in detail, but rather to give a general and geometric intuition for PCA, how and when it can be applied to data, and ways to extend / customize the method depending on your data analysis needs. 
 
 #### Tools used:
-```
+{% highlight python %}
 numpy
 scipy
 sklearn
 matplotlib
 seaborn
-```
+{% endhighlight %}
 Full code available at: (I will add link)
 
 ## Outline
@@ -52,9 +52,9 @@ The most typical way PCA is solved is by performing an eigendecomposition of the
 To illustrate this approach, we will use randomly generated 2-D synthetic data as above. To simplify our approach slightly, we generate mean-centered data.
 
 #### Step 1 - Compute the covariance matrix
-```
+{% highlight python %}
 cov = np.cov(X) # use numpy covariance function to compute covariance matrix of data
-```
+{% endhighlight %}
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/pca/data_and_cov_matrix.png" title="pca data" class="img-fluid rounded z-depth-1" %}
@@ -65,55 +65,55 @@ cov = np.cov(X) # use numpy covariance function to compute covariance matrix of 
 </div>
 
 #### Step 2 - Perform eigendecomposition
-```
+{% highlight python %}
 eigenvalues, eigenvectors = np.linalg.norm(cov) 
 
 # sort according to variance explained
 sort_args = np.argsort(eigenvalues)[::-1]
 eigenvectors = eigenvectors[:, sort_args]
 eigenvalues = eigenvalues[sort_args]
-```
+{% endhighlight %}
 
 #### Step 3 - Compute fraction variance explained by each component
-```
+{% highlight python %}
 var_explained = eigenvalues / np.sum(eigenvalues)
-```
+{% endhighlight %}
 
 #### Step 4 - Verify that we have reproduced `sklearn` results
-```
+{% highlight python %}
 # sklearn pca
 from sklearn.decomposition import PCA
 pca = PCA()
 pca.fit(X.T)
-```
+{% endhighlight %}
 
 The eigenvectors we found are identical to the components returned by `sklearn`.
-```
+{% highlight python %}
 # the dot product of our eigenvectors and `sklearn`'s components should return the identity matrix
 dp = abs.(eigenvectors.T @ pca.components_)
 print(dp)
 
 array([[ 1.00000000e+00,  1.97596122e-16],
        [-2.21149847e-16,  1.00000000e+00]])
-```
+{% endhighlight %}
 
 We have correctly measured the variance explained by each component.
-```
+{% highlight python %}
 print(f"Eigendecomposition, variance explained ratio: {var_explained}")
 print(f"sklearn, variance explained ratio: {pca.explained_variance_ratio_}")
 
 Eigendecomposition, variance explained ratio: [0.88977678 0.11022322]
 sklearn, variance explained ratio: [0.88977678 0.11022322]
-```
+{% endhighlight %}
 
 Using the first PC to reconstruct our data, we get identical results.
-```
+{% highlight python %}
 e_reconstructed = X.T @ eigenvectors[:, [0]] @ eigenvectors[:, [0]].T
 sk_reconstructed = X.T @ pca.components_[[0], :].T @ pca.components_[[0], :]
 print(f"sum of reconstruction differences: {np.sum(e_reconstructed - sk_reconstructed)}")
 
 sum of reconstruction differences: -1.8512968935624485e-14
-```
+{% endhighlight %}
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -129,7 +129,7 @@ sum of reconstruction differences: -1.8512968935624485e-14
 Instead of using eigendecomposition, it is also possible to formulate PCA as an optimization problem in which the objective is to find the set of basis vectors that minimize the low-rank reconstruction error of the data. From an efficiency standpoint, this does not make a lot of sense given that we have already demonstrated that there exists a closed form solution to PCA that can be solved extremely efficiently. However, demonstrating that PCA can be posed as an optimization problem helps to drive home the point that the fundamental objective of PCA is to find the basis vectors that capture as much variance as possible in the original data. Furthermore, it allows us the flexibility to modify the objective function of the optimization in order to suit our particular analysis needs. But more on that in the following section.
 
 To perform PCA, we seek to minimize the objective function `frob` - the squared [Frobenius norm](https://mathworld.wolfram.com/FrobeniusNorm.html) of the difference between the reconstructed data and the original data:
-```
+{% highlight python %}
 # define objective function
 def frob(pc, X):
     # reconstruct rank-1 view of X
@@ -139,10 +139,10 @@ def frob(pc, X):
     # normalize by sq. frob norm of data, X
     err = err / (np.linalg.norm(X)**2)
     return err
-```
+{% endhighlight %}
 
 Next, we also define a callback function to monitor the progress of our fitting procedure.
-```
+{% highlight python %}
 # define a callback function to monitor fitting progress
 def callbackF(Xi):
     global Nfeval
@@ -153,10 +153,10 @@ def callbackF(Xi):
     loss.append(ll)
     print(f"Nfeval: {Nfeval}, loss: {ll}")
     Nfeval += 1
-```
+{% endhighlight %}
 
 Finally, we perform the optimization. In order to ensure that our fitted basis vectors are orthogonal, as required by PCA, we perform the fitting in an iterative fashion. That is, we loop over principal components in order of decreasing variance explained and on each iteration we deflate the target matrix **X** by the rank-1 reconstruction for each principal component. This ensures that on the next iteration we find a basis vector that is orthogonal to all those that were fit before it. The procedure for this is shown below:
-```
+{% highlight python %}
 # fit model -- iterate over components, fit, deflate, fit next PC
 n_components = 2
 components_ = np.zeros((n_components, X.shape[0]))
@@ -185,7 +185,8 @@ for component in range(0, n_components):
     # save all intermediate PCs and loss during the optimization procedure
     loss_optim.append(loss)
     params_optim.append(parms)
-```
+{% endhighlight %}
+
 In the animation below, we visualize the fitting process. We can see that we converge relatively quickly to the true solution for the first principal component.
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -201,7 +202,7 @@ One useful advantage of advantage of thinking of PCA as an optimization problem 
 
 In standard PCA, we seek to minimize the objective function described in code the previous section. This objective function can be written mathematically as:
 
-$$||\textbf{X} - \textbf{X}WW^T||_{F}^{2}$$
+$$\left(||\textbf{X} - \textbf{X}WW^T||_{F}^{2})$$
 
 Where $$ \textbf{X} $$ represents our original data, $$ W $$ represents a principal component (i.e., a basis or "loading" vector), and $$ ||\cdot||_F^2 $$ represents the squared Frobenius norm. Thus, the goal is to find $$ W $$ such that we minimize the difference between $$ \textbf{X} $$ and its rank-1 reconstruction: $$ \textbf{X}WW^T $$.
 
