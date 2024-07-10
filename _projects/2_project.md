@@ -33,7 +33,7 @@ Full code available at: (I will add link)
 
 
 ## <a name="basics"></a>The basics
-PCA is a linear dimensionality reduction method. The goal of dimensionalty reduction, in general, is to find a represenation of the original data which maintains the data's overall structure while reducing the number of dimensions needed to describe it. In the case of PCA, this is done by finding the ordered set of orthonormal **basis** vectors which capture the principal axes of variation in the original data. To reduce the dimensionality, the basis vectors which capture the least amount of variance are discarded. The data is then **transformed** by projecting it onto the remaining basis vectors. Using this low dimensional representation of the data, it is then possible to **reconstruct** a "denoised", low-rank version of the original data. This basic idea is illustrated in the cartoon below.
+PCA is a linear dimensionality reduction method. The goal of dimensionalty reduction, in general, is to find a represenation of the original data which maintains the data's overall structure while reducing the number of dimensions needed to describe it. In the case of PCA, this is done by finding the ordered set of orthonormal **basis** vectors (called **loadings**) which capture the principal axes of variation in the original data. To reduce the dimensionality, the loading vectors which capture the least amount of variance are discarded. The data is then **transformed** by projecting it onto the remaining loadings. Using this new, low dimensional representation of the data, it is then possible to **reconstruct** a "denoised", low-rank version of the original data. This basic idea is illustrated graphically with the simulated data below.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -187,30 +187,30 @@ for component in range(0, n_components):
     params_optim.append(parms)
 ```
 
-In the animation below, we visualize the fitting process. We can see that we converge relatively quickly to the true solution for the first principal component.
+In the animation below, we visualize the fitting process. We can see that we converge relatively quickly to the true solution for the first loading vector.
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/pca/optim.gif" title="pca optimization" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Animation of PCA fitting procedure for the first principal component. Left: input data shown in gray, estimate of the first principal component shown in black, true first principal component shown in red. Right: Reconstruction error as a function of optimization steps (N feval - Number of function evaluations).
+    Animation of PCA fitting procedure for the first loading vector. Left: input data shown in gray, estimate of the first loading vector shown in black, true first loading vector shown in red. Right: Reconstruction error as a function of optimization steps (N feval - Number of function evaluations).
 </div>
 
 ## <a name="sparse"></a>Extensions of PCA - Sparse PCA
-One useful advantage of advantage of thinking of PCA as an optimization problem is that it draws a close parallel to linear regression, which has been extended in a variety of ways to suit different analysis problems - such as introducing sparsity to the fitted regression coefficients (analogous to our principal components). Identifying sparse principal components (many weights are 0) can be useful for interpretability. For example, if you have a very high dimensional dataset you might want to identify only a small subset of the input variables which contribute to variance, rather than a combination of all the variables which can be difficult to interpret. In order to understand how we can implement this, it is helpful to briefly highlight a bit of the underlying math.
+One useful advantage of advantage of thinking of PCA as an optimization problem is that it draws a close parallel to linear regression, which has been extended in a variety of ways to suit different analysis problems - such as introducing sparsity to the fitted regression coefficients (analogous to loading vectors in the case of PCA). Identifying sparse loadings (many weights are equal to 0) can be useful for interpretability. For example, if you have a very high dimensional dataset you might want to identify only a small subset of the input variables which contribute to variance, rather than a combination of all the variables which can be difficult to interpret. In order to understand how we can implement this, it is helpful to briefly highlight a bit of the underlying math.
 
 In standard PCA, we seek to minimize the objective function described in code the previous section. This objective function can be written mathematically as:
 
-\begin{equation}
+<!-- \begin{equation}
 ||\textbf{X} - \textbf{X}WW^T||_{F}^{2}
-\end{equation}
+\end{equation} -->
 
-<!-- Where $$ \textbf{X} $$ represents our original data, $$ W $$ represents a principal component (i.e., a basis or "loading" vector), and $$ ||\cdot||_F^2 $$ represents the squared Frobenius norm. Thus, the goal is to find $$ W $$ such that we minimize the difference between $$ \textbf{X} $$ and its rank-1 reconstruction: $$ \textbf{X}WW^T $$.
+Where $$ \textbf{X} $$ represents our original data, $$ W $$ represents a principal component (i.e., a basis or "loading" vector), and $$ ||\cdot||_F^2 $$ represents the squared Frobenius norm. Thus, the goal is to find $$ W $$ such that we minimize the difference between $$ \textbf{X} $$ and its rank-1 reconstruction: $$ \textbf{X}WW^T $$.
 
 In order to arrive at a form of Sparse PCA, all we need to do is tack on a sparsity penalty to our objective function. One way to do this is using the [L1 norm](https://mathworld.wolfram.com/L1-Norm.html). Our new objective function then becomes: -->
 
-$$||\textbf{X} - \textbf{X}WW^T||_F^2 + \lambda\sum_{i=1}^{n}||\textbf{w}_i||_1$$
+<!-- $$||\textbf{X} - \textbf{X}WW^T||_F^2 + \lambda\sum_{i=1}^{n}||\textbf{w}_i||_1$$ -->
 
 Where the second term, $$ \sum_{i=1}^{n}||\textbf{w}_i||_1 $$ is the L1 norm and $$ \lambda $$ is a tunable hyperparameter controlling the level of sparsity desired. This new objective function is now very similar to [LASSO](https://en.wikipedia.org/wiki/Lasso_(statistics)) regression. 
 
