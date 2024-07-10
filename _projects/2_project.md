@@ -201,15 +201,15 @@ One useful advantage of advantage of thinking of PCA as an optimization problem 
 
 In standard PCA, we seek to minimize the objective function described in code the previous section. This objective function can be written mathematically as:
 
-$$
-||\textbf{X} - \textbf{X}WW^T||_F^2\
-$$
+$$||\textbf{X} - \textbf{X}WW^T||_F^2$$
 
-Where $$ \textbf{X} $$ represents our original data, $W$ represents a principal component (i.e., a basis or "loading" vector), and $||.||_F^2$ represents the squared Frobenius norm. Thus, the goal is to find $W$ such that we minimize the difference between $\textbf{X}$ and the its rank-1 reconstruction $\textbf{X}$: $\textbf{X}WW^T$.
+Where $$ \textbf{X} $$ represents our original data, $$W$$ represents a principal component (i.e., a basis or "loading" vector), and $$||.||_F^2$$ represents the squared Frobenius norm. Thus, the goal is to find $$W$$ such that we minimize the difference between $$\textbf{X}$$ and the its rank-1 reconstruction $$\textbf{X}$$: $$\textbf{X}WW^T$$.
 
-In order to arrive at a form of Sparse PCA, all we need to do is tack on a sparsity penalty to our objective function. One way to do this is using the [L1 norm](https://mathworld.wolfram.com/L1-Norm.html):
+In order to arrive at a form of Sparse PCA, all we need to do is tack on a sparsity penalty to our objective function. One way to do this is using the [L1 norm](https://mathworld.wolfram.com/L1-Norm.html). Our new objective function then becomes:
+
 $$||\textbf{X} - \textbf{X}WW^T||_F^2 + \lambda\sum_{i=1}^{n}||\textbf{w}_i||_1$$
-Where the second term, $$\sum_{i=1}^{n}||\textbf{w}_i||_1$$ is the L1 norm and $\lambda$ is a tunable hyperparameter controlling the level of sparsity desired. This new objective function is now very similar to [LASSO](https://en.wikipedia.org/wiki/Lasso_(statistics)) regression. 
+
+Where the second term, $$\sum_{i=1}^{n}||\textbf{w}_i||_1$$ is the L1 norm and $$\lambda$$ is a tunable hyperparameter controlling the level of sparsity desired. This new objective function is now very similar to [LASSO](https://en.wikipedia.org/wiki/Lasso_(statistics)) regression. 
 
 To see this in action, let's take a look at a quick example (synethic) dataset:
 
