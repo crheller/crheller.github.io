@@ -30,8 +30,8 @@
      borderlayer="false"
      units="in"
      inkscape:zoom="1.2810466"
-     inkscape:cx="670.54547"
-     inkscape:cy="324.73448"
+     inkscape:cx="663.51997"
+     inkscape:cy="325.51509"
      inkscape:window-width="2880"
      inkscape:window-height="1583"
      inkscape:window-x="0"
@@ -1912,393 +1912,232 @@
       </g>
     </g>
     <g
-       id="matplotlib.axis_4"
+       id="ytick_9"
        transform="matrix(0.35277778,0,0,0.35277778,-0.14029791,-4.8623755)">
       <g
-         id="ytick_9">
+         id="line2d_24">
         <g
-           id="line2d_24">
-          <g
-             id="g1433">
-            <use
-               xlink:href="#m2ca4d89312"
-               x="341.82126"
-               y="231.1048"
-               style="stroke:#000000;stroke-width:0.8"
-               id="use1431"
-               width="100%"
-               height="100%" />
-          </g>
-        </g>
-        <g
-           id="text_25">
-          <!-- −10 -->
-          <g
-             transform="matrix(0.1,0,0,-0.1,313.71656,234.90402)"
-             id="g1442">
-            <use
-               xlink:href="#DejaVuSans-2212"
-               id="use1436"
-               x="0"
-               y="0"
-               width="100%"
-               height="100%" />
-            <use
-               xlink:href="#DejaVuSans-31"
-               x="83.789062"
-               id="use1438"
-               y="0"
-               width="100%"
-               height="100%" />
-            <use
-               xlink:href="#DejaVuSans-30"
-               x="147.41211"
-               id="use1440"
-               y="0"
-               width="100%"
-               height="100%" />
-          </g>
+           id="g1433">
+          <use
+             xlink:href="#m2ca4d89312"
+             x="341.82126"
+             y="231.1048"
+             style="stroke:#000000;stroke-width:0.8"
+             id="use1431"
+             width="100%"
+             height="100%" />
         </g>
       </g>
       <g
-         id="ytick_10">
+         id="text_25">
+        <!-- −10 -->
         <g
-           id="line2d_25">
-          <g
-             id="g1448">
-            <use
-               xlink:href="#m2ca4d89312"
-               x="341.82126"
-               y="198.34171"
-               style="stroke:#000000;stroke-width:0.8"
-               id="use1446"
-               width="100%"
-               height="100%" />
-          </g>
+           transform="matrix(0.1,0,0,-0.1,313.71656,234.90402)"
+           id="g1442">
+          <use
+             xlink:href="#DejaVuSans-2212"
+             id="use1436"
+             x="0"
+             y="0"
+             width="100%"
+             height="100%" />
+          <use
+             xlink:href="#DejaVuSans-31"
+             x="83.789062"
+             id="use1438"
+             y="0"
+             width="100%"
+             height="100%" />
+          <use
+             xlink:href="#DejaVuSans-30"
+             x="147.41211"
+             id="use1440"
+             y="0"
+             width="100%"
+             height="100%" />
         </g>
+      </g>
+    </g>
+    <g
+       id="ytick_10"
+       transform="matrix(0.35277778,0,0,0.35277778,-0.14029791,-4.8623755)">
+      <g
+         id="line2d_25">
         <g
-           id="text_26">
-          <!-- −5 -->
-          <g
-             transform="matrix(0.1,0,0,-0.1,320.07906,202.14092)"
-             id="g1455">
-            <use
-               xlink:href="#DejaVuSans-2212"
-               id="use1451"
-               x="0"
-               y="0"
-               width="100%"
-               height="100%" />
-            <use
-               xlink:href="#DejaVuSans-35"
-               x="83.789062"
-               id="use1453"
-               y="0"
-               width="100%"
-               height="100%" />
-          </g>
+           id="g1448">
+          <use
+             xlink:href="#m2ca4d89312"
+             x="341.82126"
+             y="198.34171"
+             style="stroke:#000000;stroke-width:0.8"
+             id="use1446"
+             width="100%"
+             height="100%" />
         </g>
       </g>
       <g
-         id="ytick_11">
+         id="text_26">
+        <!-- −5 -->
         <g
-           id="line2d_26">
-          <g
-             id="g1461">
-            <use
-               xlink:href="#m2ca4d89312"
-               x="341.82126"
-               y="165.57861"
-               style="stroke:#000000;stroke-width:0.8"
-               id="use1459"
-               width="100%"
-               height="100%" />
-          </g>
+           transform="matrix(0.1,0,0,-0.1,320.07906,202.14092)"
+           id="g1455">
+          <use
+             xlink:href="#DejaVuSans-2212"
+             id="use1451"
+             x="0"
+             y="0"
+             width="100%"
+             height="100%" />
+          <use
+             xlink:href="#DejaVuSans-35"
+             x="83.789062"
+             id="use1453"
+             y="0"
+             width="100%"
+             height="100%" />
         </g>
+      </g>
+    </g>
+    <g
+       id="ytick_11"
+       transform="matrix(0.35277778,0,0,0.35277778,-0.14029791,-4.8623755)">
+      <g
+         id="line2d_26">
         <g
-           id="text_27">
-          <!-- 0 -->
-          <g
-             transform="matrix(0.1,0,0,-0.1,328.45875,169.37783)"
-             id="g1466">
-            <use
-               xlink:href="#DejaVuSans-30"
-               id="use1464"
-               x="0"
-               y="0"
-               width="100%"
-               height="100%" />
-          </g>
+           id="g1461">
+          <use
+             xlink:href="#m2ca4d89312"
+             x="341.82126"
+             y="165.57861"
+             style="stroke:#000000;stroke-width:0.8"
+             id="use1459"
+             width="100%"
+             height="100%" />
         </g>
       </g>
       <g
-         id="ytick_12">
+         id="text_27">
+        <!-- 0 -->
         <g
-           id="line2d_27">
-          <g
-             id="g1472">
-            <use
-               xlink:href="#m2ca4d89312"
-               x="341.82126"
-               y="132.81552"
-               style="stroke:#000000;stroke-width:0.8"
-               id="use1470"
-               width="100%"
-               height="100%" />
-          </g>
+           transform="matrix(0.1,0,0,-0.1,328.45875,169.37783)"
+           id="g1466">
+          <use
+             xlink:href="#DejaVuSans-30"
+             id="use1464"
+             x="0"
+             y="0"
+             width="100%"
+             height="100%" />
         </g>
+      </g>
+    </g>
+    <g
+       id="ytick_12"
+       transform="matrix(0.35277778,0,0,0.35277778,-0.14029791,-4.8623755)">
+      <g
+         id="line2d_27">
         <g
-           id="text_28">
-          <!-- 5 -->
-          <g
-             transform="matrix(0.1,0,0,-0.1,328.45875,136.61474)"
-             id="g1477">
-            <use
-               xlink:href="#DejaVuSans-35"
-               id="use1475"
-               x="0"
-               y="0"
-               width="100%"
-               height="100%" />
-          </g>
+           id="g1472">
+          <use
+             xlink:href="#m2ca4d89312"
+             x="341.82126"
+             y="132.81552"
+             style="stroke:#000000;stroke-width:0.8"
+             id="use1470"
+             width="100%"
+             height="100%" />
         </g>
       </g>
       <g
-         id="ytick_13">
+         id="text_28">
+        <!-- 5 -->
         <g
-           id="line2d_28">
-          <g
-             id="g1483">
-            <use
-               xlink:href="#m2ca4d89312"
-               x="341.82126"
-               y="100.05243"
-               style="stroke:#000000;stroke-width:0.8"
-               id="use1481"
-               width="100%"
-               height="100%" />
-          </g>
+           transform="matrix(0.1,0,0,-0.1,328.45875,136.61474)"
+           id="g1477">
+          <use
+             xlink:href="#DejaVuSans-35"
+             id="use1475"
+             x="0"
+             y="0"
+             width="100%"
+             height="100%" />
         </g>
+      </g>
+    </g>
+    <g
+       id="ytick_13"
+       transform="matrix(0.35277778,0,0,0.35277778,-0.14029791,-4.8623755)">
+      <g
+         id="line2d_28">
         <g
-           id="text_29">
-          <!-- 10 -->
-          <g
-             transform="matrix(0.1,0,0,-0.1,322.09625,103.85165)"
-             id="g1490">
-            <use
-               xlink:href="#DejaVuSans-31"
-               id="use1486"
-               x="0"
-               y="0"
-               width="100%"
-               height="100%" />
-            <use
-               xlink:href="#DejaVuSans-30"
-               x="63.623047"
-               id="use1488"
-               y="0"
-               width="100%"
-               height="100%" />
-          </g>
+           id="g1483">
+          <use
+             xlink:href="#m2ca4d89312"
+             x="341.82126"
+             y="100.05243"
+             style="stroke:#000000;stroke-width:0.8"
+             id="use1481"
+             width="100%"
+             height="100%" />
         </g>
       </g>
       <g
-         id="ytick_14">
+         id="text_29">
+        <!-- 10 -->
         <g
-           id="line2d_29">
-          <g
-             id="g1496">
-            <use
-               xlink:href="#m2ca4d89312"
-               x="341.82126"
-               y="67.289337"
-               style="stroke:#000000;stroke-width:0.8"
-               id="use1494"
-               width="100%"
-               height="100%" />
-          </g>
+           transform="matrix(0.1,0,0,-0.1,322.09625,103.85165)"
+           id="g1490">
+          <use
+             xlink:href="#DejaVuSans-31"
+             id="use1486"
+             x="0"
+             y="0"
+             width="100%"
+             height="100%" />
+          <use
+             xlink:href="#DejaVuSans-30"
+             x="63.623047"
+             id="use1488"
+             y="0"
+             width="100%"
+             height="100%" />
         </g>
+      </g>
+    </g>
+    <g
+       id="ytick_14"
+       transform="matrix(0.35277778,0,0,0.35277778,-0.14029791,-4.8623755)">
+      <g
+         id="line2d_29">
         <g
-           id="text_30">
-          <!-- 15 -->
-          <g
-             transform="matrix(0.1,0,0,-0.1,322.09625,71.088553)"
-             id="g1503">
-            <use
-               xlink:href="#DejaVuSans-31"
-               id="use1499"
-               x="0"
-               y="0"
-               width="100%"
-               height="100%" />
-            <use
-               xlink:href="#DejaVuSans-35"
-               x="63.623047"
-               id="use1501"
-               y="0"
-               width="100%"
-               height="100%" />
-          </g>
+           id="g1496">
+          <use
+             xlink:href="#m2ca4d89312"
+             x="341.82126"
+             y="67.289337"
+             style="stroke:#000000;stroke-width:0.8"
+             id="use1494"
+             width="100%"
+             height="100%" />
         </g>
       </g>
       <g
-         id="text_31">
-        <!-- Projection onto $PC$ -->
+         id="text_30">
+        <!-- 15 -->
         <g
-           transform="matrix(0,-0.12,-0.12,0,307.19656,208.7)"
-           id="g1547">
-          <defs
-             id="defs1509">
-            <path
-               id="path2722"
-               d="M 1259,4147 V 2394 h 794 q 441,0 681,228 241,228 241,650 0,419 -241,647 -240,228 -681,228 z m -631,519 h 1425 q 785,0 1186,-355 402,-355 402,-1039 0,-691 -402,-1044 -401,-353 -1186,-353 H 1259 V 0 H 628 Z"
-               transform="scale(0.015625)" />
-            <path
-               id="path2724"
-               d="m 603,3500 h 575 V -63 q 0,-668 -255,-968 -254,-300 -820,-300 h -219 v 487 H 38 q 328,0 446,152 119,151 119,629 z m 0,1363 h 575 V 4134 H 603 Z"
-               transform="scale(0.015625)" />
-          </defs>
+           transform="matrix(0.1,0,0,-0.1,322.09625,71.088553)"
+           id="g1503">
           <use
-             xlink:href="#DejaVuSans-50"
-             transform="translate(0,0.015625)"
-             id="use1511"
+             xlink:href="#DejaVuSans-31"
+             id="use1499"
              x="0"
              y="0"
              width="100%"
              height="100%" />
           <use
-             xlink:href="#DejaVuSans-72"
-             transform="translate(60.302734,0.015625)"
-             id="use1513"
-             x="0"
-             y="0"
-             width="100%"
-             height="100%" />
-          <use
-             xlink:href="#DejaVuSans-6f"
-             transform="translate(101.41602,0.015625)"
-             id="use1515"
-             x="0"
-             y="0"
-             width="100%"
-             height="100%" />
-          <use
-             xlink:href="#DejaVuSans-6a"
-             transform="translate(162.59766,0.015625)"
-             id="use1517"
-             x="0"
-             y="0"
-             width="100%"
-             height="100%" />
-          <use
-             xlink:href="#DejaVuSans-65"
-             transform="translate(190.38086,0.015625)"
-             id="use1519"
-             x="0"
-             y="0"
-             width="100%"
-             height="100%" />
-          <use
-             xlink:href="#DejaVuSans-63"
-             transform="translate(251.9043,0.015625)"
-             id="use1521"
-             x="0"
-             y="0"
-             width="100%"
-             height="100%" />
-          <use
-             xlink:href="#DejaVuSans-74"
-             transform="translate(306.88477,0.015625)"
-             id="use1523"
-             x="0"
-             y="0"
-             width="100%"
-             height="100%" />
-          <use
-             xlink:href="#DejaVuSans-69"
-             transform="translate(346.09375,0.015625)"
-             id="use1525"
-             x="0"
-             y="0"
-             width="100%"
-             height="100%" />
-          <use
-             xlink:href="#DejaVuSans-6f"
-             transform="translate(373.87695,0.015625)"
-             id="use1527"
-             x="0"
-             y="0"
-             width="100%"
-             height="100%" />
-          <use
-             xlink:href="#DejaVuSans-6e"
-             transform="translate(435.05859,0.015625)"
-             id="use1529"
-             x="0"
-             y="0"
-             width="100%"
-             height="100%" />
-          <use
-             xlink:href="#DejaVuSans-20"
-             transform="translate(498.4375,0.015625)"
-             id="use1531"
-             x="0"
-             y="0"
-             width="100%"
-             height="100%" />
-          <use
-             xlink:href="#DejaVuSans-6f"
-             transform="translate(530.22461,0.015625)"
-             id="use1533"
-             x="0"
-             y="0"
-             width="100%"
-             height="100%" />
-          <use
-             xlink:href="#DejaVuSans-6e"
-             transform="translate(591.40625,0.015625)"
-             id="use1535"
-             x="0"
-             y="0"
-             width="100%"
-             height="100%" />
-          <use
-             xlink:href="#DejaVuSans-74"
-             transform="translate(654.78516,0.015625)"
-             id="use1537"
-             x="0"
-             y="0"
-             width="100%"
-             height="100%" />
-          <use
-             xlink:href="#DejaVuSans-6f"
-             transform="translate(693.99414,0.015625)"
-             id="use1539"
-             x="0"
-             y="0"
-             width="100%"
-             height="100%" />
-          <use
-             xlink:href="#DejaVuSans-20"
-             transform="translate(755.17578,0.015625)"
-             id="use1541"
-             x="0"
-             y="0"
-             width="100%"
-             height="100%" />
-          <use
-             xlink:href="#DejaVuSans-Oblique-50"
-             transform="translate(786.96289,0.015625)"
-             id="use1543"
-             x="0"
-             y="0"
-             width="100%"
-             height="100%" />
-          <use
-             xlink:href="#DejaVuSans-Oblique-43"
-             transform="translate(847.26562,0.015625)"
-             id="use1545"
-             x="0"
+             xlink:href="#DejaVuSans-35"
+             x="63.623047"
+             id="use1501"
              y="0"
              width="100%"
              height="100%" />
@@ -4749,35 +4588,35 @@
        y="0"><tspan
          x="484.32617"
          y="480.93516"
-         id="tspan8280"><tspan
+         id="tspan3851"><tspan
            style="font-style:normal;text-align:center;text-anchor:middle"
-           id="tspan8278">&quot;Projecting&quot; the data onto a given </tspan></tspan><tspan
+           id="tspan3849">&quot;Projecting&quot; the data onto a given </tspan></tspan><tspan
          x="512.19727"
          y="497.73514"
-         id="tspan8286"><tspan
+         id="tspan3857"><tspan
            style="font-style:normal;text-align:center;text-anchor:middle"
-           id="tspan8282">loading vector</tspan><tspan
+           id="tspan3853">loading vector</tspan><tspan
            style="font-style:normal;text-align:center;text-anchor:middle"
-           id="tspan8284"> is described </tspan></tspan><tspan
+           id="tspan3855"> is described </tspan></tspan><tspan
          x="468.79102"
          y="514.53513"
-         id="tspan8290"><tspan
+         id="tspan3861"><tspan
            style="font-style:normal;text-align:center;text-anchor:middle"
-           id="tspan8288">mathemtically as the inner product of </tspan></tspan><tspan
+           id="tspan3859">mathemtically as the inner product of </tspan></tspan><tspan
          x="471.18555"
          y="531.33512"
-         id="tspan8298"><tspan
+         id="tspan3869"><tspan
            style="font-style:normal;text-align:center;text-anchor:middle"
-           id="tspan8292">the raw data, </tspan><tspan
+           id="tspan3863">the raw data, </tspan><tspan
            style="font-style:normal;font-weight:bold;text-align:center;text-anchor:middle"
-           id="tspan8294">X</tspan><tspan
+           id="tspan3865">X</tspan><tspan
            style="font-style:normal;text-align:center;text-anchor:middle"
-           id="tspan8296">, and the basis vector </tspan></tspan><tspan
+           id="tspan3867">, and the basis vector </tspan></tspan><tspan
          x="576.72852"
          y="548.13511"
-         id="tspan8302"><tspan
+         id="tspan3873"><tspan
            style="font-style:normal;text-align:center;text-anchor:middle"
-           id="tspan8300">of interest.</tspan></tspan></text>
+           id="tspan3871">of interest.</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,95.078723,0.52916673)"
@@ -4787,33 +4626,33 @@
        y="0"><tspan
          x="467.33008"
          y="480.93516"
-         id="tspan8306"><tspan
+         id="tspan3877"><tspan
            style="font-style:normal;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle"
-           id="tspan8304">Reconstructing the original data using </tspan></tspan><tspan
+           id="tspan3875">Reconstructing the original data using </tspan></tspan><tspan
          x="473.13867"
          y="497.73514"
-         id="tspan8310"><tspan
+         id="tspan3881"><tspan
            style="font-style:normal;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle"
-           id="tspan8308">only the first principal componet, we </tspan></tspan><tspan
+           id="tspan3879">only the first principal componet, we </tspan></tspan><tspan
          x="497.58398"
          y="514.53513"
-         id="tspan8316"><tspan
+         id="tspan3887"><tspan
            style="font-style:normal;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle"
-           id="tspan8312">can observe that the </tspan><tspan
+           id="tspan3883">can observe that the </tspan><tspan
            style="font-style:normal;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle"
-           id="tspan8314">prinicipal </tspan></tspan><tspan
+           id="tspan3885">prinicipal </tspan></tspan><tspan
          x="475.80664"
          y="531.33512"
-         id="tspan8322"><tspan
+         id="tspan3893"><tspan
            style="font-style:normal;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle"
-           id="tspan8318">dimension of variance in the </tspan><tspan
+           id="tspan3889">dimension of variance in the </tspan><tspan
            style="font-style:normal;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle"
-           id="tspan8320">orignal </tspan></tspan><tspan
+           id="tspan3891">orignal </tspan></tspan><tspan
          x="542.85742"
          y="548.13511"
-         id="tspan8326"><tspan
+         id="tspan3897"><tspan
            style="font-style:normal;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle"
-           id="tspan8324">data is maintained.</tspan></tspan></text>
+           id="tspan3895">data is maintained.</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-style:italic;font-size:4.23333px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';stroke-width:0.264583"
@@ -4866,5 +4705,17 @@
          style="font-style:normal;font-size:4.23333px;stroke-width:0.264583"
          x="35.977009"
          y="13.501443">Loading vector 2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-size:4.23333px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';stroke-width:0.264583"
+       x="-73.717438"
+       y="108.9002"
+       id="text2401"
+       transform="rotate(-90)"><tspan
+         sodipodi:role="line"
+         id="tspan2399"
+         style="font-style:normal;font-size:4.23333px;stroke-width:0.264583"
+         x="-73.717438"
+         y="108.9002">Projection onto loading</tspan></text>
   </g>
 </svg>
