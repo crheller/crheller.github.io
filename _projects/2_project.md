@@ -1,11 +1,11 @@
 ---
 layout: page
-title: PCA - Derivations, extensions, and limitations
+title: PCA - Derivations and extensions
 description: In this project, I explore different methods for performing Principal Component Analysis with the goal of providing a deeper intuitive understanding of the method and its applicability to data science problems.
 img: assets/img/12.jpg
 importance: 1
 category: fun
-related_publications: true
+related_publications: false
 ---
 
 ## Background
@@ -21,15 +21,14 @@ sklearn
 matplotlib
 seaborn
 {% endhighlight %}
-Full code available at: (I will add link)
+Full code available at: [https:://github.com/crheller/PCAdemos.git](https:://github.com/crheller/PCAdemos.git)
 
 ## Outline
 1. [The basics](#basics)
 2. [PCA as an eigendecomposition problem](#edecomp)
 3. [PCA as a reconstruction optimization problem](#reconstruction)
 4. [Extensions of PCA - Sparse PCA](#sparse)
-5. [Limitations of PCA for latent variable disovery](#limitations)
-6. [Summary](#summary)
+5. [Summary](#summary)
 
 
 ## <a name="basics"></a>The basics
@@ -167,7 +166,7 @@ def callbackF(Xi):
     Nfeval += 1
 ```
 
-Above, I have explicitly defined a constraint that ensures each loading vector has a magnitude of one. The second constraint that we must also enforce is that all loading vectors are orthogonal. To do this, I decided to perform the fitting in an iterative fashion. That is, I loop over principal components and fit one loading vector at a time. By construction, the first loading vector I find will explain the maximal amount of variance in the data. Thus, if I use this fitted loading on each iteration to [deflate]() the target matrix **X** by subtracting the rank-1 reconstruction, I remove all variance associated with it. This means I am guaranteed that the next loading vector I find will be orthogonal to all those that were fit before it. The procedure for this is shown below:
+Above, I have explicitly defined a constraint that ensures each loading vector has a magnitude of one. The second constraint that we must also enforce is that all loading vectors are orthogonal. To do this, I decided to perform the fitting in an iterative fashion. That is, I loop over principal components and fit one loading vector at a time. By construction, the first loading vector I find will explain the maximal amount of variance in the data. Thus, if I use this fitted loading on each iteration to [deflate]() the target matrix $$ \textbf{X} $$ by subtracting the rank-1 reconstruction, I remove all variance associated with it. This means I am guaranteed that the next loading vector I find will be orthogonal to all those that were fit before it. The procedure for this is shown below:
 
 ```python
 # fit model -- iterate over components, fit, deflate, fit next PC
@@ -204,7 +203,7 @@ for component in range(0, n_components):
     params_optim.append(parms)
 ```
 
-In the animation below, we visualize the fitting process. We can see that we converge relatively quickly to the true solution for the first loading vector.
+From the animation below, it is clear that the estimate of the first loading vector converges relatively quickly to the true solution given by `sklearn` using this procedure.
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/pca/optim.gif" title="pca optimization" class="img-fluid rounded z-depth-1" %}
@@ -214,7 +213,7 @@ In the animation below, we visualize the fitting process. We can see that we con
     Animation of PCA fitting procedure for the first loading vector. Left: input data shown in gray, estimate of the first loading vector shown in black, true first loading vector shown in red. Right: Reconstruction error as a function of optimization steps (N feval - Number of function evaluations).
 </div>
 
-In addition to testing the above approach with simple 2-D data, I also explored higher dimensional datasets, as well. In my high(er)-D simulations, which more closely resemble the types of data one might be interested in analyzing with PCA, using this optimization approach does not always find the true solution. This is especially true for the low-variance loading vectors, as can be seen below. Thus, while illustrative, there is really no reason to use this approach for standard PCA over methods like the eigendecomposition approach.
+In addition to testing the above approach with simple 2-D data, I explored higher dimensional data, as well. Even with this high(er)-D data, the optimization approach is typically quite stable. However, especially for the lower variance principal components, this approach does not always guarantee finding the true solution. Thus, while illustrative, there is really no reason to use this approach for standard PCA over methods like the eigendecomposition approach.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -222,7 +221,7 @@ In addition to testing the above approach with simple 2-D data, I also explored 
     </div>
 </div>
 <div class="caption">
-    Left: Scree plot of simulated 15-D data. Right: Cosine similarity between loadings calculated using `sklearn` vs. optimized loadings fit using the procedure described above.
+    Left: Scree plot of simulated 15-D data. Right: Cosine similarity between loadings calculated using `sklearn` vs. optimized loadings fit using the procedure described above. If the solutions were identical, we would expect 1's along the diagonal and zeros everywhere else.
 </div>
 
 ## <a name="sparse"></a>Extensions of PCA - Sparse PCA
@@ -230,11 +229,11 @@ One advantage of thinking of PCA as an optimization problem is that one realizes
 
 Before jumping into my implementation, I should also note that a variety of solutions have been proposed for performing Sparse PCA and packages such as `sklearn` often offer a version of [Sparse PCA](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.SparsePCA.html).
 
-To implement sparse PCA "from scratch," it is helpful to first briefly dig just a little bit into the math of the PCA objective function. In standard PCA, we seek to minimize reconstruction error. Mathematically this can be formulated as:
+To implement sparse PCA "from scratch," it is helpful to first briefly dig just a little bit into the math of the PCA objective function. In standard PCA, the goal is to minimize reconstruction error. Mathematically this can be formulated as:
 
 $$ \|\textbf{X} - \textbf{X}WW^T\|_{F}^{2} $$
 
-Where $$ \textbf{X} $$ represents our original data, $$ W $$ represents a single loading vector, and $$ \|\cdot\|_{F}^{2} $$ represents the squared Frobenius norm. Thus, the goal is to find $$ W $$ such that we minimize the difference between $$ \textbf{X} $$ and its rank-1 PCA reconstruction: $$ \textbf{X}WW^T $$, subject to the constraint that all $$ W $$ form an [orthonomal basis set](https://en.wikipedia.org/wiki/Orthonormality). This means that all vectors have a magnitude of one and are orthogonal. Mathematically, this can be expressed as $$ WW^T=I $$. 
+Where $$ \textbf{X} $$ represents our original data, $$ W $$ represents a single loading vector, and $$ \|\cdot\|_{F}^{2} $$ represents the squared Frobenius norm. Thus, minimizing this function finds $$ W $$ such that $$ \textbf{X}WW^T $$ is the best possible reconstruction of $$ \textbf{X} $$, subject to the constraint that all $$ W $$ form an [orthonomal basis set](https://en.wikipedia.org/wiki/Orthonormality). This means that all vectors have a magnitude of one and are orthogonal. Mathematically, this can be expressed as $$ WW^T=I $$. 
 
 From this starting point, it is straightforward to introduce a sparsity penalty. One way to do this is using the [L1 norm](https://mathworld.wolfram.com/L1-Norm.html). Using the L1 norm to penalize non-sparse loading vectors, our new objective function becomes:
 
@@ -250,13 +249,25 @@ def sparse_wrapper(pc, X, lam):
     # compute reconstruction error
     err = frob(pc, X)
     # add L1 regularization
-    err = err + (np.sum(np.abs(pc)) * lam) #+  (np.sum(pc**2) * 0.01)
+    err = err + (np.sum(np.abs(pc)) * lam)
     return err
 ```
 
-I then simulated datasets and fit the Sparse PCA model for a range of sparsity constraints. The effect of sparsity the identified loading vectors, and on the variance explained, is shown in the figure below for one such simulation:
+I then simulated datasets and fit my Sparse PCA model for a range of sparsity constraints. The effect of sparsity on the fitted loading vectors, and on the variance explained by the reconstruction, is shown in the figure below for one such simulation:
 
-As expected, increasing $$ \lambda $$ quickly leads to finding a more sparse set of loading vectors. However, it also quickly reduces the amount of variance explained in the data. This is why Sparse PCA, while sometimes useful for finding interpretable loadings, is not an ideal method for other applications of PCA, such as data compression. 
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/pca/sparse.png" title="pca high-d optimization" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Left: Scree plot of simulated 15-D data for standard PCA (blue) and for Sparse PCA with a range of sparsity constraints. Right, top: First principal component loading vectors for each value of sparsity. Right, bottom: Same, for second principal component. Dark red = 1, dark blue = -1, white = 0. From this, it is clear that increasing lambda leads to more 0 weight entries in the loading vectors.
+</div>
+
+As expected, increasing $$ \lambda $$ leads to finding loading vectors with a more sparse set of weights. However, it also quickly reduces the amount of variance explained in the data by each of the top principal components. This is why Sparse PCA, while sometimes useful for finding interpretable loadings, is usually not a great method for other applications of PCA, such as data compression. 
 
 
 ## <a name="summary"></a>Summary
+In this project, I briefly highlighted the basics of PCA. In addition, I demonstrated two separate methods for solving the problem from "first principles" and touched on the some of the advantages and disadvantages of each method. Finally, I showed that implementing a version of Sparse PCA is relatively straightforward, when PCA is thought of as a reconstruction optimization problem. For me, this was one of the biggest take homes - that other dimensionality reduction methods, such as Sparse PCA, Non-negative matrix factorization, Factor Analysis, etc., and their relationship to PCA, can be more easily understood when considering the underlying objective function PCA.
+
+All the code used in this project is saved and available on my [github](https:://github.com/crheller/PCAdemos.git).
