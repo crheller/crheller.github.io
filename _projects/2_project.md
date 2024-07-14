@@ -2,7 +2,7 @@
 layout: page
 title: PCA - Derivations and extensions
 description: In this project, I explore different methods for performing Principal Component Analysis with the goal of providing a deeper intuitive understanding of the method and its applicability to data science problems.
-img: assets/img/12.jpg
+img: #assets/img/12.jpg
 importance: 1
 category: fun
 related_publications: false
@@ -21,7 +21,7 @@ sklearn
 matplotlib
 seaborn
 {% endhighlight %}
-Full code available at: [https:://github.com/crheller/PCAdemos.git](https:://github.com/crheller/PCAdemos.git)
+Full code available at: [https://github.com/crheller/PCAdemos](https://github.com/crheller/PCAdemos)
 
 ## Outline
 1. [The basics](#basics)
@@ -268,6 +268,6 @@ As expected, increasing $$ \lambda $$ leads to finding loading vectors with a mo
 
 
 ## <a name="summary"></a>Summary
-In this project, I briefly highlighted the basics of PCA. In addition, I demonstrated two separate methods for solving the problem from "first principles" and touched on the some of the advantages and disadvantages of each method. Finally, I showed that implementing a version of Sparse PCA is relatively straightforward, when PCA is thought of as a reconstruction optimization problem. For me, this was one of the biggest take homes - that other dimensionality reduction methods, such as Sparse PCA, Non-negative matrix factorization, Factor Analysis, etc., and their relationship to PCA, can be more easily understood when considering the underlying objective function PCA.
+In this project, I briefly highlighted the basics of PCA. In addition, I demonstrated two separate methods for solving the problem from "first principles" and touched on the some of the advantages and disadvantages of each method. Finally, I showed that implementing a version of Sparse PCA is relatively straightforward, when PCA is thought of as a reconstruction optimization problem. For me, this was one of the biggest take homes - that other dimensionality reduction methods, such as Sparse PCA, Non-negative matrix factorization, Factor Analysis, etc., and their relationship to PCA, can be more easily understood when considering the underlying objective function of PCA.
 
-All the code used in this project is saved and available on my [github](https:://github.com/crheller/PCAdemos.git).
+All the code used in this project is saved and available on my [github](https://github.com/crheller/PCAdemos).
