@@ -1,0 +1,856 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="9in"
+   height="4.5in"
+   viewBox="0 0 228.6 114.3"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="high_level_schematic.svg"
+   inkscape:export-filename="/data/code/github/crheller.github.io/assets/img/db/high_level_schematic.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="false"
+     inkscape:document-units="mm"
+     showgrid="false"
+     borderlayer="false"
+     units="in"
+     width="6in"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:zoom="0.90509668"
+     inkscape:cx="474.53494"
+     inkscape:cy="293.33883"
+     inkscape:window-width="1850"
+     inkscape:window-height="1016"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible"
+       id="marker236827"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(-0.6)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
+         id="path236825" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker236817"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mstart"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.6)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
+         id="path236815" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect236813"
+       is_visible="true"
+       lpeversion="1" />
+    <marker
+       style="overflow:visible"
+       id="marker236803"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(-0.6)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
+         id="path236801" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker236793"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mstart"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.6)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
+         id="path236791" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect236789"
+       is_visible="true"
+       lpeversion="1" />
+    <marker
+       style="overflow:visible"
+       id="marker236746"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(-0.6)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
+         id="path236289" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker236737"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mstart"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.6)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
+         id="path236735" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect236653"
+       is_visible="true"
+       lpeversion="1" />
+    <marker
+       style="overflow:visible"
+       id="Arrow2Mstart"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mstart"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.6)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
+         id="path236286" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Sstart"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Sstart"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.2,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path236274" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect236180"
+       is_visible="true"
+       lpeversion="1" />
+    <marker
+       style="overflow:visible"
+       id="Arrow2Mend"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(-0.6)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
+         id="path16325" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Send"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path16313" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect16184"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect16184-6"
+       is_visible="true"
+       lpeversion="1" />
+    <marker
+       style="overflow:visible"
+       id="Arrow2Mend-9"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(-0.6)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
+         id="path16325-0" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect16184-6-8"
+       is_visible="true"
+       lpeversion="1" />
+    <marker
+       style="overflow:visible"
+       id="Arrow2Mend-3"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(-0.6)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
+         id="path16325-1" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect16184-6-1"
+       is_visible="true"
+       lpeversion="1" />
+    <marker
+       style="overflow:visible"
+       id="Arrow2Mend-0"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(-0.6)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
+         id="path16325-3" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect16184-6-9"
+       is_visible="true"
+       lpeversion="1" />
+    <marker
+       style="overflow:visible"
+       id="Arrow2Mend-93"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(-0.6)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
+         id="path16325-38" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect16184-6-0"
+       is_visible="true"
+       lpeversion="1" />
+    <marker
+       style="overflow:visible"
+       id="Arrow2Mend-0-5"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(-0.6)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
+         id="path16325-3-6" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect16184-6-9-6"
+       is_visible="true"
+       lpeversion="1" />
+    <marker
+       style="overflow:visible"
+       id="Arrow2Mend-0-6"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(-0.6)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
+         id="path16325-3-2" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect16184-6-9-67"
+       is_visible="true"
+       lpeversion="1" />
+    <marker
+       style="overflow:visible"
+       id="Arrow2Mend-5"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(-0.6)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
+         id="path16325-6" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect16184-6-98"
+       is_visible="true"
+       lpeversion="1" />
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Drop Shadow"
+       id="filter220781"
+       x="-0.065220731"
+       y="-0.087191616"
+       width="1.1191965"
+       height="1.1593502">
+      <feFlood
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood220771" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite220773" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="1"
+         result="blur"
+         id="feGaussianBlur220775" />
+      <feOffset
+         dx="-0.5"
+         dy="-0.5"
+         result="offset"
+         id="feOffset220777" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite220779" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Drop Shadow"
+       id="filter220793"
+       x="-0.037574055"
+       y="-0.098123417"
+       width="1.0686698"
+       height="1.179329">
+      <feFlood
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood220783" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite220785" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="1"
+         result="blur"
+         id="feGaussianBlur220787" />
+      <feOffset
+         dx="-0.5"
+         dy="-0.5"
+         result="offset"
+         id="feOffset220789" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite220791" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Drop Shadow"
+       id="filter220805"
+       x="-0.037574055"
+       y="-0.15769184"
+       width="1.0686698"
+       height="1.2881954">
+      <feFlood
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood220795" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite220797" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="1"
+         result="blur"
+         id="feGaussianBlur220799" />
+      <feOffset
+         dx="-0.5"
+         dy="-0.5"
+         result="offset"
+         id="feOffset220801" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite220803" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Drop Shadow"
+       id="filter220817"
+       x="-0.037574052"
+       y="-0.071503631"
+       width="1.0686698"
+       height="1.1306791">
+      <feFlood
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood220807" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite220809" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="1"
+         result="blur"
+         id="feGaussianBlur220811" />
+      <feOffset
+         dx="-0.5"
+         dy="-0.5"
+         result="offset"
+         id="feOffset220813" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite220815" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Drop Shadow"
+       id="filter220829"
+       x="-0.035536203"
+       y="-0.096140993"
+       width="1.0649455"
+       height="1.175706">
+      <feFlood
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood220819" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite220821" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="1"
+         result="blur"
+         id="feGaussianBlur220823" />
+      <feOffset
+         dx="-0.5"
+         dy="-0.5"
+         result="offset"
+         id="feOffset220825" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite220827" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#e4e4e4;fill-opacity:1;stroke:none;stroke-width:0.264999;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter220781)"
+       id="rect218902"
+       width="44.46439"
+       height="33.260078"
+       x="3.0780907"
+       y="11.53135" />
+    <rect
+       style="fill:#e4e4e4;fill-opacity:1;stroke:none;stroke-width:0.329112;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter220793)"
+       id="rect218902-0"
+       width="77.180916"
+       height="29.554617"
+       x="55.678078"
+       y="11.53135" />
+    <rect
+       style="fill:#e4e4e4;fill-opacity:1;stroke:none;stroke-width:0.341888;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter220829)"
+       id="rect218902-0-0"
+       width="81.606918"
+       height="30.164032"
+       x="145.17328"
+       y="18.410513"
+       transform="matrix(0.91295692,0,0,1.1159111,17.943131,-8.9584058)" />
+    <rect
+       style="fill:#e4e4e4;fill-opacity:1;stroke:none;stroke-width:0.259613;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter220805)"
+       id="rect218902-3"
+       width="77.180916"
+       height="18.390299"
+       x="55.678078"
+       y="45.65089" />
+    <rect
+       style="fill:#e4e4e4;fill-opacity:1;stroke:none;stroke-width:0.385538;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter220817)"
+       id="rect218902-4"
+       width="77.180923"
+       height="40.557381"
+       x="55.678078"
+       y="68.59156" />
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-size:3.52778px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';stroke-width:0.264583"
+       x="152.82846"
+       y="16.242989"
+       id="text1685"><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-weight:bold;font-size:3.52778px;stroke-width:0.264583"
+         x="152.82846"
+         y="16.242989"
+         id="tspan40595">Max Planck HPC Cluster</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-size:3.52778px;stroke-width:0.264583"
+         x="152.82846"
+         y="19.947157"
+         id="tspan40601" /><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-size:3.52778px;stroke-width:0.264583"
+         x="152.82846"
+         y="23.651327"
+         id="tspan40603">State-of-the-art compute tools</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-size:3.52778px;stroke-width:0.264583"
+         x="152.82846"
+         y="27.355495"
+         id="tspan228557">   (https://www.mpcdf.mpg.de/)</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-size:3.52778px;stroke-width:0.264583"
+         x="152.82846"
+         y="31.059664"
+         id="tspan40605" /><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-size:3.52778px;stroke-width:0.264583"
+         x="152.82846"
+         y="34.763832"
+         id="tspan40607">  - SLURM batching system</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-size:3.52778px;stroke-width:0.264583"
+         x="152.82846"
+         y="38.468002"
+         id="tspan40873">  - Automated batch job queueing</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-size:3.52778px;stroke-width:0.264583"
+         x="152.82846"
+         y="42.172173"
+         id="tspan82805">  - Host lab code for data analysis</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-size:3.52778px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';stroke-width:0.264583"
+       x="57.472397"
+       y="72.645828"
+       id="text6675"><tspan
+         sodipodi:role="line"
+         id="tspan6673"
+         style="font-style:normal;font-weight:bold;font-size:3.52778px;stroke-width:0.264583"
+         x="57.472397"
+         y="72.645828">Automated queue monitoring</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-size:3.52778px;stroke-width:0.264583"
+         x="57.472397"
+         y="76.349998"
+         id="tspan49633" /><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-size:3.52778px;stroke-width:0.264583"
+         x="57.472397"
+         y="80.054169"
+         id="tspan49635">bash / python / rsync / sshfs / cron</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-size:3.52778px;stroke-width:0.264583"
+         x="57.472397"
+         y="83.758331"
+         id="tspan48045" /><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-size:3.52778px;stroke-width:0.264583"
+         x="57.472397"
+         y="87.462502"
+         id="tspan48047">  - <tspan
+   style="fill:#00a800;fill-opacity:1"
+   id="tspan212088">Scrape queue collection</tspan></tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-size:3.52778px;stroke-width:0.264583"
+         x="57.472397"
+         y="91.166672"
+         id="tspan87186">  - Build SLURM batch scripts</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-size:3.52778px;stroke-width:0.264583"
+         x="57.472397"
+         y="94.870842"
+         id="tspan48049">  - Initiate data / job transfers to HPC</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-size:3.52778px;stroke-width:0.264583"
+         x="57.472397"
+         y="98.575012"
+         id="tspan48051">  - Monitor HPC running jobs</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-size:3.52778px;stroke-width:0.264583"
+         x="57.472397"
+         y="102.27918"
+         id="tspan55285">  - Initiate results transfers to local server</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-size:3.52778px;stroke-width:0.264583"
+         x="57.472397"
+         y="105.98335"
+         id="tspan151863">  - <tspan
+   style="fill:#00a800;fill-opacity:1"
+   id="tspan215672">Update job status in queue </tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-size:3.52778px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';stroke-width:0.264583"
+       x="57.687714"
+       y="50.351349"
+       id="text13795"><tspan
+         sodipodi:role="line"
+         id="tspan13793"
+         style="font-style:normal;font-weight:bold;font-size:3.52778px;stroke-width:0.264583"
+         x="57.687714"
+         y="50.351349">Julia API</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-weight:bold;font-size:3.52778px;stroke-width:0.264583"
+         x="57.687714"
+         y="54.055519"
+         id="tspan56309" /><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-weight:normal;font-size:3.52778px;stroke-width:0.264583"
+         x="57.687714"
+         y="57.759686"
+         id="tspan56311">- <tspan
+   style="fill:#8b00c5;fill-opacity:1"
+   id="tspan203202">Query database</tspan></tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-weight:normal;font-size:3.52778px;stroke-width:0.264583"
+         x="57.687714"
+         y="61.463856"
+         id="tspan56313">- <tspan
+   style="fill:#00a800;fill-opacity:1"
+   id="tspan209776">Submit HPC batch jobs </tspan></tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-weight:normal;font-size:3.52778px;stroke-width:0.264583"
+         x="57.687714"
+         y="65.168022"
+         id="tspan60905" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-size:3.52778px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';stroke-width:0.264583"
+       x="5.5031495"
+       y="16.592907"
+       id="text16175"><tspan
+         sodipodi:role="line"
+         id="tspan16173"
+         style="font-style:normal;font-weight:bold;font-size:3.52778px;stroke-width:0.264583"
+         x="5.5031495"
+         y="16.592907">Database backend</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-size:3.52778px;stroke-width:0.264583"
+         x="5.5031495"
+         y="20.297075"
+         id="tspan26961" /><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-size:3.52778px;stroke-width:0.264583"
+         x="5.5031495"
+         y="24.001245"
+         id="tspan100955">MongoDB replica set</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-size:3.52778px;stroke-width:0.264583"
+         x="5.5031495"
+         y="27.705414"
+         id="tspan29641" /><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-size:3.52778px;stroke-width:0.264583"
+         x="5.5031495"
+         y="31.409582"
+         id="tspan105069">Collections:</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-size:3.52778px;stroke-width:0.264583"
+         x="5.5031495"
+         y="35.11375"
+         id="tspan24265">  - <tspan
+   style="fill:#8b00c5;fill-opacity:1"
+   id="tspan157019">data</tspan> </tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-size:3.52778px;stroke-width:0.264583"
+         x="5.5031495"
+         y="38.817921"
+         id="tspan31077">  - <tspan
+   style="fill:#00a800;fill-opacity:1"
+   id="tspan158489">queue</tspan></tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-size:3.52778px;stroke-width:0.264583"
+         x="5.5031495"
+         y="42.522091"
+         id="tspan31133">  - <tspan
+   style="fill:#f57d00;fill-opacity:1"
+   id="tspan243137">users</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-size:3.52778px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';stroke-width:0.265;stroke-miterlimit:4;stroke-dasharray:none"
+       x="57.384544"
+       y="16.592907"
+       id="text20397"><tspan
+         sodipodi:role="line"
+         id="tspan20395"
+         style="font-style:normal;font-weight:bold;font-size:3.52778px;stroke-width:0.265;stroke-miterlimit:4;stroke-dasharray:none"
+         x="57.384544"
+         y="16.592907">Web dashboard</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-size:3.52778px;stroke-width:0.265;stroke-miterlimit:4;stroke-dasharray:none"
+         x="57.384544"
+         y="20.297075"
+         id="tspan65779" /><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-size:3.52778px;stroke-width:0.265;stroke-miterlimit:4;stroke-dasharray:none"
+         x="57.384544"
+         y="24.001245"
+         id="tspan71739">php / html / css / javascript / docker</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-size:3.52778px;stroke-width:0.265;stroke-miterlimit:4;stroke-dasharray:none"
+         x="57.384544"
+         y="27.705414"
+         id="tspan71741" /><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-size:3.52778px;stroke-width:0.265;stroke-miterlimit:4;stroke-dasharray:none"
+         x="57.384544"
+         y="31.409582"
+         id="tspan65781">  - <tspan
+   style="fill:#8b00c5;fill-opacity:1"
+   id="tspan197582">Add data (experiment) entries</tspan></tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-size:3.52778px;stroke-width:0.265;stroke-miterlimit:4;stroke-dasharray:none"
+         x="57.384544"
+         y="35.11375"
+         id="tspan66365">  - <tspan
+   style="fill:#8b00c5;fill-opacity:1"
+   id="tspan198412">Browse data</tspan></tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-size:3.52778px;stroke-width:0.265;stroke-miterlimit:4;stroke-dasharray:none"
+         x="57.384544"
+         y="38.817921"
+         id="tspan66367">  - <tspan
+   style="fill:#00a800;fill-opacity:1"
+   id="tspan208442">Monitor HPC batch jobs</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-size:4.23333px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';stroke-width:0.264583"
+       x="35.01685"
+       y="6.6529527"
+       id="text160841"><tspan
+         sodipodi:role="line"
+         id="tspan160839"
+         style="font-style:normal;font-weight:bold;font-size:4.23333px;stroke-width:0.264583"
+         x="35.01685"
+         y="6.6529527">Local lab server(s)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-size:4.23333px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';stroke-width:0.264583"
+       x="158.04707"
+       y="6.330493"
+       id="text164076"><tspan
+         sodipodi:role="line"
+         id="tspan164074"
+         style="font-style:normal;font-weight:bold;font-size:4.23333px;stroke-width:0.264583"
+         x="158.04707"
+         y="6.330493">Remote compute cluster</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.352778;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Mstart);marker-end:url(#Arrow2Mend-0-5)"
+       d="M 138.13527,87.203934 177.03862,50.046552"
+       id="path236178"
+       inkscape:path-effect="#path-effect236180"
+       inkscape:original-d="M 138.13527,87.203934 C 151.10332,74.818405 164.0711,62.432611 177.03862,50.046552" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.352778;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker236737);marker-end:url(#marker236746)"
+       d="M 49.314366,27.911382 H 53.9386"
+       id="path236651"
+       inkscape:path-effect="#path-effect236653"
+       inkscape:original-d="m 49.314366,27.911382 c 1.541677,2.65e-4 3.083087,2.65e-4 4.624234,0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.352778;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker236793);marker-end:url(#marker236803)"
+       d="m 37.497582,47.429544 14.498144,9.582269"
+       id="path236787"
+       inkscape:path-effect="#path-effect236789"
+       inkscape:original-d="m 37.497582,47.429544 c 4.832956,3.194375 9.665671,6.388465 14.498144,9.582269" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.352778;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker236817);marker-end:url(#marker236827)"
+       d="M 15.343384,48.243719 51.242148,92.227546"
+       id="path236811"
+       inkscape:path-effect="#path-effect236813"
+       inkscape:original-d="M 15.343384,48.243719 C 27.310015,62.905292 39.276271,77.566568 51.242148,92.227546" />
+  </g>
+</svg>
