@@ -155,9 +155,23 @@
   "certificates": [
     {
       "name": "Climate Change: Learning for Action",
-      "date": "2023-07-24",
+      "date": "2023-07",
       "issuer": "terra.do",
       "url": "https://www.terra.do/",
+      "icon": "fa-solid fa-location-dot"
+    },
+    {
+      "name": "Advanced Neural Data Analysis Course",
+      "date": "2019-04",
+      "issuer": "Bernstein Network Computational Neuroscience",
+      "url": "https://bernstein-network.de/en/teaching-and-research/study-and-training/online-learning/anda/",
+      "icon": "fa-solid fa-location-dot"
+    },
+    {
+      "name": "Summer Workshop on the Dynamic Brain",
+      "date": "2017-08",
+      "issuer": "Allen Institute",
+      "url": "https://alleninstitute.org/events/summer-workshop-on-the-dynamic-brain-2024/",
       "icon": "fa-solid fa-location-dot"
     }
   ],
@@ -228,14 +242,14 @@
       "name": "Nature-based climate solutions",
       "icon": "fa-solid fa-tag",
       "keywords": [
-        "reforestation", "regenerative agriculture", "environmental conservation"
+        "reforestation", "regenerative agriculture", "environmental conservation", "carbon markets"
       ]
     },
     {
       "name": "Electrical grid",
       "icon": "fa-solid fa-tag",
       "keywords": [
-        "renewable generation", "smart grids", "resiliency"
+        "renewable generation", "smart grids", "resiliency", "energy storage"
       ]
     },
     {

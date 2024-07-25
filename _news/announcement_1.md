@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Hello world! Stay tuned for updates... I am still in the process of completing my portfolio
+Hello world! Stay tuned for updates... I am still in the process of building my portfolio
