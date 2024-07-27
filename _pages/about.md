@@ -21,4 +21,4 @@ A Minnesota native, I spent much of my childhood camping on the north shore of L
 
 Currently, I am a postdoctoral fellow in the [RoLi Lab](https://www.rolilab.com/) at [The Max Planck Institute for Biological Cybernetics](https://www.kyb.tuebingen.mpg.de/en) in Tuebingen, Germany. Prior to this position, I completed my PhD in Neuroscience in the [Laboratory of Brain Hearing and Behavior](https://hearingbrain.org/) in Portland, Oregon. I hold a bachelor's degree in Physics from [St. Olaf College](https://wp.stolaf.edu).
 
-In my spare time I love being outdoors - cycling, hiking, and running.
+In my spare time, I love being outdoors - cycling, hiking, and running.

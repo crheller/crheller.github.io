@@ -2,7 +2,7 @@
 layout: page
 title: projects
 permalink: /projects/
-description: Thanks for visiting! More projects coming soon!
+description: Thanks for visiting! Here you will find a selection of projects that I have worked on during my Postdoc, PhD, and in my spare time. This page is still in construction - stay tuned, more projects will be added soon!
 nav: true
 nav_order: 3
 display_categories: [Postdoc, PhD, fun]
