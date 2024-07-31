@@ -3,7 +3,7 @@ layout: page
 title: Lab database and compute ecosystem
 description: Full stack development of an intergrated lab database and compute system that allows users to easily log/query experimental data and provides tools for performing automated, standardized data analysis pipelines in a high performance computing environment.
 img: #assets/img/ddr.png
-importance: 1
+importance: 2
 category: Postdoc
 related_publications: false
 ---
@@ -16,29 +16,28 @@ This is a large project that I have been independently developing over roughly 3
 ## Outline
 1. [Overview](#overview)
 2. [Database](#mongo)
-3. [Web dashboard](#dashboard)
+3. [Web API](#dashboard)
 4. [Julia API](#julia)
-5. [Automated queue monitoring](#qmonitor)
+5. [Automated db watchdog](#qmonitor)
 6. [Max Planck High Performance Computing System](#hpc)
 
 ## <a name="overview"></a>Overview
-At a high level, the system is composed of 3 parts:
+At a high level, the system is composed of 4 parts:
 1. Database backend
-2. Compute environment (HPC system)
-3. Tools for reading / writing to the database and tools for communicating with the HPC system
-    * Front end user interfaces: Web dashboard / Julia API
-    * Automated scraping of the database and communication with HPC system
-
-In the following sections, I will unpack each of these components in more detail.
+2. Frontend database APIs 
+3. Automated database watchdog that monitors database entries, sends compute jobs to the HPC system, and collects results
+4. Compute environment (remote HPC system)
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/db/high_level_schematic.png" title="schema" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/db/schematic2.png" title="schema" class="img-fluid rounded z-depth-0" %}
     </div>
 </div>
 <div class="caption">
-    High level overview of the ecosystem. The database backend, web dashboard, Julia API, and queue monitoring system are hosted on our local lab server(s). The compute environment is the remote, high performance computing system of the Max Planck Institute and is maintained by the MPI core staff. Text colors correspond to the different database collections, which we discuss in more detail in the following section.
+    High level overview of the ecosystem. The database backend, web API, Julia API, and database watchdog are all hosted on our local lab server(s). The compute environment is the remote, high performance computing system of the Max Planck Institute and is maintained by the MPI core staff.
 </div>
+
+In the following sections, I will unpack each of these components in more detail.
 
 ## <a name="mongo"></a>Database
 
@@ -49,7 +48,7 @@ I chose to implement the database backend using a [NoSQL](https://en.wikipedia.o
 #### Database collections
 The database consists of three separate [collections](https://www.mongodb.com/docs/manual/core/databases-and-collections/):
 1. users
-    * Stores general lab member user information such as email, lab username, HPC account information, and login credentials for the [web dashboard](#dashboard)
+    * Stores general lab member user information such as email, lab username, HPC account information, and login credentials for the [web API](#dashboard)
 2. data
     * Stores meta data for every experiment.
     * Consists of required fields (e.g., timestamp of data acquisition and location of the data)
@@ -59,9 +58,9 @@ The database consists of three separate [collections](https://www.mongodb.com/do
     * Can be uniquely linked to the `data` collection via the dataset acquisition timestamp
 
 
-## <a name="dashboard"></a>Web dashboard
+## <a name="dashboard"></a>Web API
 
-In order to provide a user-friendly interface with the database, I built a lightweight web dashboard which lives in a docker container on a lab server and was built using a combination of PHP, CSS, HTML, and JavaScript. This platform serves 3 main purposes:
+In order to provide a user-friendly interface with the database, I built a lightweight web API which lives in a docker container on a lab server and was built using a combination of PHP, CSS, HTML, and JavaScript. This platform serves 3 main purposes:
 
 1. Allow users to enter new experimental data into the database
  <div class="row justify-content-sm-center">
@@ -93,7 +92,7 @@ In order to provide a user-friendly interface with the database, I built a light
 
 ## <a name="julia"></a>Julia API
 
-Our lab performs most data analysis and visualization using Julia scripts. Therefore, I built a very simple Julia API to allow users to interact with the database from code. The two main use cases are:
+Our lab performs most data analysis and visualization using Julia. Therefore, I built a very simple Julia API to allow users to interact with the database from code. The two main use cases are:
 
 1. Query the database to find a set of datasets to analyze:
 ```julia
@@ -125,14 +124,14 @@ julia> dbqueue_job(
                 job_options=Dict("split_idx" => 1, "num_splits" => 40)
 )
 ```
-The above command creates a new entry in the `queue` collection which will get scraped by the [automated queue monitoring](#qmonitor) system that I discuss in the next section.
+The above command creates a new entry in the `queue` collection which will get scraped by the [db watchdog](#qmonitor) system that I discuss in the next section.
 
 
 ## <a name="qmonitor"></a>Automated queue monitoring
 
 Running a data analysis pipeline on a High Performance Computing (HPC) system has huge advantages in terms of speed, scalability, and reproducibility. However, getting it set up can sometimes be challenging, particularly for those without prior experience writing batch scripts or working with job scheduling systems such as [SLURM](https://slurm.schedmd.com/documentation.html). In order to run a data analysis job on an HPC system, you need to transfer your data to where it can be accessed by the compute nodes, build a "batch script" (the set of instructions that tells the machine what to do with the data), submit this batch script to SLURM, and you need to locate the output of your job and move it back to a local server. 
 
-To streamline this process for standard data pipelines in our lab, I built an automated system that allows users to easily utilize our institute's HPC system. As a result of this automation, from the perspective of the user, all that needs to be done to submit a job is run one line of code in [Julia](#julia), monitor the job's status on the [web dashboard](#dashboard), and wait for the results to be returned to their local machine in lab. 
+To streamline this process for standard data pipelines in our lab, I built an automated system that allows users to easily utilize our institute's HPC system. As a result of this automation, from the perspective of the user, all that needs to be done to submit a job is run one line of code in [Julia](#julia), monitor the job's status on the [web API](#dashboard), and wait for the results to be returned to their local machine in lab. 
 
 This automation is achieved by a set of [CronJobs](https://en.wikipedia.org/wiki/Cron) running on our local lab servers. These CronJobs contain 3 steps:
 
@@ -152,7 +151,7 @@ This automation is achieved by a set of [CronJobs](https://en.wikipedia.org/wiki
     * When final output is detected, initiate transfer of output file(s) back to local lab server
 
 
-All of these tools live in a single git repository. In order to get started using the system, users just need to clone the repo and run a short python install script which sets up the user's cron tab, requests the user's credentials, and mounts the remote data directory (`sshfs`) in order to achieve automation. In addition to these automation tools, this repository also contains a directory with the lab analysis code to be executed on the remote HPC system. This ensures that all users analyze their data using the same procedure which increases the standardization and reproducibility of data pipelines in our lab.
+All of these tools live in a single git repository. In order to get started using the system, users just need to clone the repo and run a short python install script which sets up the user's cron tab, requests the user's credentials, and mounts the remote data directory (using `sshfs`) in order to achieve automation. In addition to these automation tools, this repository also contains a folder with the lab analysis source code to be executed on the remote HPC system. This ensures that all users analyze their data using the same procedure which increases the standardization and reproducibility of data pipelines in our lab.
 
 ## <a name="hpc"></a>Max Planck High Performance Computing System
-All Max Planck Institute researchers have access to state-of-the-art HPC systems. These are managed by the [MPCDF](https://www.mpcdf.mpg.de/). Details about their systems can be found by visiting their [website](https://www.mpcdf.mpg.de/). For the project described here, we have primarily made use of the [raven](https://www.mpcdf.mpg.de/services/supercomputing/raven) compute cluster, however, my system was built to adapt to be able to utilize additional clusters and I am in the process of incporating the new [viper](https://www.mpcdf.mpg.de/services/supercomputing/viper) cluster, as well. 
+All Max Planck Institute researchers have access to state-of-the-art HPC systems. These are managed by the [MPCDF](https://www.mpcdf.mpg.de/). Further details can be found by visiting their [website](https://www.mpcdf.mpg.de/). For the project described here, we have primarily made use of the [raven](https://www.mpcdf.mpg.de/services/supercomputing/raven) compute cluster, however, my system was built to be able to utilize additional clusters and I am in the process of incporating the new [viper](https://www.mpcdf.mpg.de/services/supercomputing/viper) cluster, as well. 
