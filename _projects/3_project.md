@@ -9,7 +9,9 @@ related_publications: false
 ---
 
 ## Introduction
-Reproducible, standardized data analysis pipelines are critically important in research. As the volume and size of the datasets collected grows (as is currently the case in systems neuroscience) this need becomes more apparent. In this project, I developed an internal lab database and compute ecosystem that allows experimental data to be easily logged and queried by users. It also provides the framework and tools to facilitate automated, standardized data analysis using high performance computing by all lab members.
+Reproducible, standardized data analysis pipelines are critically important in research. As the volume and size of the datasets collected grows (as is currently the case in systems neuroscience) this need becomes more apparent. In this project, I developed an internal lab database and compute ecosystem that allows experimental data to be easily logged and queried by users. It also provides the framework and tools to facilitate automated, standardized data analysis using high performance computing by all lab members. 
+
+Our lab has developed several custom data processing pipelines that are critical for supporting our everyday research. In the past, team members were expected to run these pipelines on our local lab servers. This approach had two main drawbacks. First, due to limited internal compute resources, these pipelines could often take anywhere from three weeks to over a month to complete, per dataset. Given that we regularly collect 10-15 datasets per week, this timeline was not feasible for our research. Second, the pipelines were usually run in Jupyter notebooks using non-version controlled source code. Therefore, discrepancies between processed data were difficult to track down. With my new system, a single dataset can be processed in 2-4 days and the processing is done with standardized, version controlled source code that is shared between lab members.
 
 This is a large project that I have been independently developing over roughly 3 years in the [RoLi Lab](https://www.rolilab.com/). Although I am still working on incremental improvements, the system is fully operational and currently being used by all lab members. Because it lives on our institute's private network and contains proprietary data, I am not able to go into full details or release any of the associated code or tools I have built here. Therefore, the goal of this post is to provide an overview of the system and its component parts, hopefully illustrating the advantages of building such a system and motivating others to adopt similar ecosystems for data management and analysis in their own research.
 
@@ -25,7 +27,7 @@ This is a large project that I have been independently developing over roughly 3
 At a high level, the system is composed of 4 parts:
 1. Database backend
 2. Frontend database APIs 
-3. Automated database watchdog that monitors database entries, sends compute jobs to the HPC system, and collects results
+3. Database watchdog to monitor database entries, send compute jobs, and collects results
 4. Compute environment (remote HPC system)
 
 <div class="row">
