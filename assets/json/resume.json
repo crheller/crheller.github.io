@@ -69,7 +69,8 @@
         "numpy",
         "scipy",
         "scikit-learn",
-        "PyTorch"
+        "PyTorch", 
+        "Flask"
       ]
     },
     {
